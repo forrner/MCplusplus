@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blazeflower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:blazeflower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:suspicious_stew_from_blazeflower"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blazeflower"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:suspicious_stew_from_blazeflower"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "mcpp:blaze_ingot",
+  "base": "minecraft:netherite_sword",
+  "result": {
+    "id": "mcpp:blaze_sword"
+  },
+  "template": "mcpp:blaze_upgrade_smithing_template"
+}

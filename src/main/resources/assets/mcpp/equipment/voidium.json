@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mcpp:voidium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mcpp:voidium"
+      }
+    ]
+  }
+}

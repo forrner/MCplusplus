@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mcpp:lead"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mcpp:lead"
+      }
+    ]
+  }
+}

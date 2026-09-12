@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "mcpp:umbra_feather",
+    "E": "minecraft:elytra"
+  },
+  "pattern": [
+    "###",
+    "#E#",
+    "###"
+  ],
+  "result": {
+    "id": "mcpp:umbra_elytra"
+  }
+}

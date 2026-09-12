@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mcpp:block/blaze_torch"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mcpp:blaze_shard",
+    "F": "mcpp:blazeflower",
+    "M": "minecraft:magma_cream",
+    "R": "minecraft:blaze_rod"
+  },
+  "pattern": [
+    "###",
+    "RFM",
+    "###"
+  ],
+  "result": {
+    "id": "mcpp:blaze_core"
+  }
+}

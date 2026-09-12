@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "mcpp:tin_block",
+  "result": {
+    "id": "mcpp:tin_stairs"
+  }
+}

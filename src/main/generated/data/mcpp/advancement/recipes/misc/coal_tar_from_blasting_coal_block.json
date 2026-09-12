@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coal_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:coal_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:coal_tar_from_blasting_coal_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coal_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:coal_tar_from_blasting_coal_block"
+    ]
+  }
+}

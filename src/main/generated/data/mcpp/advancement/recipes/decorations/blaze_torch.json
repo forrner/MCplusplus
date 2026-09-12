@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blaze_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:blaze_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:blaze_torch"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blaze_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:blaze_torch"
+    ]
+  }
+}

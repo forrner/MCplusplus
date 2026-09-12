@@ -1,0 +1,11 @@
+{
+  "values": [
+    "mcpp:tin_ore",
+    "mcpp:deepslate_tin_ore",
+    "mcpp:lead_ore",
+    "mcpp:deepslate_lead_ore",
+    "mcpp:tin_block",
+    "mcpp:tin_stairs",
+    "mcpp:tin_slab"
+  ]
+}

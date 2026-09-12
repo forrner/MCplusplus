@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:stick",
+    "B": "mcpp:blaze_shard",
+    "X": [
+      "minecraft:coal",
+      "minecraft:charcoal"
+    ]
+  },
+  "pattern": [
+    "B",
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "id": "mcpp:blaze_torch"
+  }
+}

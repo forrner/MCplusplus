@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:stick",
+    "V": [
+      "mcpp:voidium",
+      "mcpp:depleted_voidium"
+    ],
+    "X": [
+      "minecraft:coal",
+      "minecraft:charcoal"
+    ]
+  },
+  "pattern": [
+    "V",
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "id": "mcpp:voidium_torch"
+  }
+}

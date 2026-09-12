@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mcpp:blaze"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mcpp:blaze"
+      }
+    ]
+  }
+}

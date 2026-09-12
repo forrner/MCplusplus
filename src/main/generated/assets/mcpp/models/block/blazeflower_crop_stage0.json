@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mcpp:block/blazeflower_crop_stage0"
+  }
+}

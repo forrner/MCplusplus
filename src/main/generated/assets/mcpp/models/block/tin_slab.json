@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "mcpp:block/tin_block",
+    "side": "mcpp:block/tin_block",
+    "top": "mcpp:block/tin_block"
+  }
+}

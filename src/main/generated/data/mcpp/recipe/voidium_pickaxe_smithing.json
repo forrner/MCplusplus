@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "mcpp:voidium",
+  "base": "mcpp:blaze_pickaxe",
+  "result": {
+    "id": "mcpp:voidium_pickaxe"
+  },
+  "template": "mcpp:voidium_upgrade_smithing_template"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "mcpp:blaze_ingot",
+  "base": "minecraft:netherite_axe",
+  "result": {
+    "id": "mcpp:blaze_axe"
+  },
+  "template": "mcpp:blaze_upgrade_smithing_template"
+}

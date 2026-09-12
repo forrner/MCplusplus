@@ -1,0 +1,26 @@
+// 26.1.2	-999999999-01-01T00:00:00	MCplusplus/Tags for minecraft:item
+30377c851fc2c100e2ce5749e8350b3463bf8f51 data/mcpp/tags/item/blaze_armor.json
+50a3c437650cde42f52e168d8ed008e0909818de data/mcpp/tags/item/blaze_tool_materials.json
+1a9318f737e25c1d4c7cbc1e904c032729659b43 data/mcpp/tags/item/lead_tool_materials.json
+50a3c437650cde42f52e168d8ed008e0909818de data/mcpp/tags/item/repairs_blaze_armor.json
+1a9318f737e25c1d4c7cbc1e904c032729659b43 data/mcpp/tags/item/repairs_lead_armor.json
+d7883b01cb499169b05838dab0e54952b98a74f5 data/mcpp/tags/item/repairs_voidium_armor.json
+636a7952e3f2f6add927ac61a86b0075b634a9f3 data/mcpp/tags/item/sugar.json
+a4f4b2d4aa7ba53a5a1287170f1a18d9ec8550e0 data/mcpp/tags/item/voidium_armor.json
+d7883b01cb499169b05838dab0e54952b98a74f5 data/mcpp/tags/item/voidium_tool_materials.json
+21573decb8ab7a379bcf7407efedd85c815271c7 data/minecraft/tags/item/axes.json
+9bbc139fa6d9c7693bfc85346812655b3b76ec3f data/minecraft/tags/item/chest_armor.json
+719ce336ab191b73278110bdc3fd4828acbf2fa4 data/minecraft/tags/item/enchantable/bow.json
+484a6b7ca1e33506a7a7e64c5360589130556bc7 data/minecraft/tags/item/enchantable/durability.json
+484a6b7ca1e33506a7a7e64c5360589130556bc7 data/minecraft/tags/item/enchantable/equippable.json
+39f3ca3b9fb11ca68d6980c94bc6b01a19e46a06 data/minecraft/tags/item/foot_armor.json
+1adf724159ef5c7ccc26e5eab56706cceb8cb9b9 data/minecraft/tags/item/head_armor.json
+99d13df213c16335cc59bfa2ec5222f6a4abe4d7 data/minecraft/tags/item/hoes.json
+a7b759462f70e7c0a36486c465937f6ad28fe744 data/minecraft/tags/item/leg_armor.json
+6a373d67dd389518836c02cdf5bd9636e04e8fe2 data/minecraft/tags/item/pickaxes.json
+e9e5aaf39ec465349f5b787587affd2fe5a70e5c data/minecraft/tags/item/shovels.json
+719ce336ab191b73278110bdc3fd4828acbf2fa4 data/minecraft/tags/item/skeleton_preferred_weapons.json
+87919181c910d909229efadc6fb9e5972b74b652 data/minecraft/tags/item/spears.json
+e164033d6ecec256bed53936930749572ae3ba63 data/minecraft/tags/item/swords.json
+b526641965745d4a6da292d8dce72a3c84431dc4 data/minecraft/tags/item/trimmable_armor.json
+719ce336ab191b73278110bdc3fd4828acbf2fa4 data/minecraft/tags/item/wither_skeleton_disliked_weapons.json

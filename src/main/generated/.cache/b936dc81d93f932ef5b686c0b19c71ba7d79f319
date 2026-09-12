@@ -1,0 +1,11 @@
+// 26.1.2	-999999999-01-01T00:00:00	MCplusplus/World Generation
+6ffb2fc2366e8840ec3301ba73419dcdef5869eb data/mcpp/worldgen/configured_feature/ore_depleted_voidium.json
+0cf156de05098b3f56134c23e41ac8f768b41e33 data/mcpp/worldgen/configured_feature/ore_hot_obsidian.json
+0f7b5d4ac66097c4e733369d66d4a7a236fbcae5 data/mcpp/worldgen/configured_feature/ore_lead.json
+116d33f4cd08c13cf84407f33771f7102209a924 data/mcpp/worldgen/configured_feature/ore_tin.json
+b2d6a7cd373f99942c4661c6cec924934c2b9b98 data/mcpp/worldgen/configured_feature/ore_voidium.json
+6947a2469a11431256e230df6dc46f6b7f7db480 data/mcpp/worldgen/placed_feature/ore_depleted_voidium.json
+f6131c11b451dcb2dcdc7e02611e2963a4a2f24c data/mcpp/worldgen/placed_feature/ore_hot_obsidian.json
+200e1ef11f864625f81b59aad56a8ecd863d5e00 data/mcpp/worldgen/placed_feature/ore_lead.json
+d021988b73cba009c84a86608ecc9d9d20d06a0f data/mcpp/worldgen/placed_feature/ore_tin.json
+8f46788974665e45c8d0cf7329ed50b1f7f851ba data/mcpp/worldgen/placed_feature/ore_voidium.json

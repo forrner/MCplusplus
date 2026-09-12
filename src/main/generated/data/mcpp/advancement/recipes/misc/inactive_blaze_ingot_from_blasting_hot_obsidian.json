@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hot_obsidian": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:hot_obsidian"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:inactive_blaze_ingot_from_blasting_hot_obsidian"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hot_obsidian"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:inactive_blaze_ingot_from_blasting_hot_obsidian"
+    ]
+  }
+}

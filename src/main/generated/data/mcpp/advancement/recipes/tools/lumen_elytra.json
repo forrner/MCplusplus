@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_elytra": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:elytra"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lumem_feather": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:lumen_feather"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:lumen_elytra"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_elytra",
+      "has_lumem_feather"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:lumen_elytra"
+    ]
+  }
+}

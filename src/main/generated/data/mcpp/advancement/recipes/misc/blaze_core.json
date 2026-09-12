@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blaze_rod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:blaze_rod"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_blaze_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:blaze_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_blazeflower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:blazeflower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:blaze_core"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blaze_shard",
+      "has_blazeflower",
+      "has_blaze_rod"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:blaze_core"
+    ]
+  }
+}

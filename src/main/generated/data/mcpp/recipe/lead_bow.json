@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "mcpp:lead_ingot",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    " #S",
+    "# S",
+    " #S"
+  ],
+  "result": {
+    "id": "mcpp:lead_bow"
+  }
+}

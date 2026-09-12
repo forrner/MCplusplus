@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 3.0,
+  "group": "inactive_blaze_ingot",
+  "ingredient": "mcpp:hot_obsidian",
+  "result": {
+    "id": "mcpp:inactive_blaze_ingot"
+  }
+}

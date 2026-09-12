@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "minecraft:diamond_pickaxe",
+    "minecraft:diamond_shovel",
+    "minecraft:diamond_axe",
+    "minecraft:diamond_hoe",
+    "minecraft:diamond_sword",
+    "minecraft:diamond_spear"
+  ],
+  "result": {
+    "id": "mcpp:diamond_nugget"
+  }
+}

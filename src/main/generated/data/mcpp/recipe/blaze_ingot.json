@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "mcpp:inactive_blaze_ingot",
+    "mcpp:blaze_core"
+  ],
+  "result": {
+    "id": "mcpp:blaze_ingot"
+  }
+}

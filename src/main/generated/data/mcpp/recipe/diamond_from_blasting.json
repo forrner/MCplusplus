@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "minecraft:diamond_helmet",
+    "minecraft:diamond_chestplate",
+    "minecraft:diamond_leggings",
+    "minecraft:diamond_boots",
+    "minecraft:diamond_horse_armor",
+    "minecraft:diamond_nautilus_armor"
+  ],
+  "result": {
+    "id": "minecraft:diamond"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mcpp:block/tin_slab"
+    },
+    "type=double": {
+      "model": "mcpp:block/tin_block"
+    },
+    "type=top": {
+      "model": "mcpp:block/tin_slab_top"
+    }
+  }
+}

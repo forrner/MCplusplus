@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mcpp:voidium_boots_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_voidium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mcpp:voidium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_voidium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mcpp:voidium_boots_smithing"
+    ]
+  }
+}

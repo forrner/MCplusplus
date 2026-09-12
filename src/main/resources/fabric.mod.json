@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "mcpp",
+	"version": "${version}",
+	"name": "MCplusplus",
+	"description": "A vanilla-style survival expansion mod",
+	"authors": [
+		"forrner"
+	],
+	"contact": {
+		"homepage": "https://github.com/forrner/MCplusplus",
+		"sources": "https://github.com/forrner/MCplusplus"
+	},
+	"license": "MIT",
+	"icon": "assets/mcpp/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.forrner.mcpp.MCplusplus"
+		],
+		"client": [
+			"com.forrner.mcpp.MCplusplusClient"
+		],
+		"fabric-datagen": [
+			"com.forrner.mcpp.MCplusplusDataGenerator"
+		]
+	},
+	"mixins": [
+		"mcpp.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

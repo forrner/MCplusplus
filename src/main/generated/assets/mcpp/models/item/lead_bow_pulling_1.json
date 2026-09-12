@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "mcpp:item/lead_bow_pulling_1"
+  }
+}

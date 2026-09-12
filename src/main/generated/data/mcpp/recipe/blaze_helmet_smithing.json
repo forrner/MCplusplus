@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "mcpp:blaze_ingot",
+  "base": "minecraft:netherite_helmet",
+  "result": {
+    "id": "mcpp:blaze_helmet"
+  },
+  "template": "mcpp:blaze_upgrade_smithing_template"
+}

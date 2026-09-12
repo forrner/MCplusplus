@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mcpp:block/tin_ore"
+    }
+  }
+}
