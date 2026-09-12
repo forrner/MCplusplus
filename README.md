@@ -14,7 +14,7 @@ and stays true to the vanilla Minecraft experience.
 
 ## Wiki
 
-For more information ,please see the [Wiki](https://github.com/forrner/template-mod/wiki)
+For more information ,please see the [Wiki](https://github.com/forrner/MCplusplus/wiki))
 
 ## License
 
