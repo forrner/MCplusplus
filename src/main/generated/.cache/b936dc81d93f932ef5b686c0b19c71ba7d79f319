@@ -1,4 +1,4 @@
-// 26.1.2	-999999999-01-01T00:00:00	MCplusplus/World Generation
+// 26.2	-999999999-01-01T00:00:00	MCplusplus/World Generation
 6ffb2fc2366e8840ec3301ba73419dcdef5869eb data/mcpp/worldgen/configured_feature/ore_depleted_voidium.json
 0cf156de05098b3f56134c23e41ac8f768b41e33 data/mcpp/worldgen/configured_feature/ore_hot_obsidian.json
 0f7b5d4ac66097c4e733369d66d4a7a236fbcae5 data/mcpp/worldgen/configured_feature/ore_lead.json

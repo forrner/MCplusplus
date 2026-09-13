@@ -1,4 +1,4 @@
-// 26.1.2	-999999999-01-01T00:00:00	MCplusplus/Tags for minecraft:block
+// 26.2	-999999999-01-01T00:00:00	MCplusplus/Tags for minecraft:block
 9994f212884e8264af96eaba34aa7e89696d8994 data/mcpp/tags/block/base_stone_end.json
 87bb328cb0b6fd1ea558569ac080fc58ff207e01 data/minecraft/tags/block/flower_pots.json
 83906f26d27c33cd83605831497c4d6a857d8661 data/minecraft/tags/block/incorrect_for_diamond_tool.json

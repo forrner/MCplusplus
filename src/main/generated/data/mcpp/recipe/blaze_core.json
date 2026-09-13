@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "mcpp:blaze_shard",
     "F": "mcpp:blazeflower",

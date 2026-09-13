@@ -1,20 +1,20 @@
 package com.forrner.mcpp.item;
 
-import com.forrner.mcpp.MCplusplus;
 import com.forrner.mcpp.block.ModBlocks;
 import com.forrner.mcpp.item.custom.LeadBowItem;
 import com.forrner.mcpp.item.custom.ModArmor;
 import com.forrner.mcpp.item.custom.ModSmithingTemplateItem;
 import com.forrner.mcpp.item.equipment.ModArmorMaterials;
 import com.forrner.mcpp.item.equipment.ModEquipmentAssets;
+import com.forrner.mcpp.references.ModBlockItemIds;
+import com.forrner.mcpp.references.ModItemIds;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Unit;
@@ -31,89 +31,89 @@ import java.util.function.UnaryOperator;
 
 public class ModItems {
 
-    public static final Item TIN_ORE = registerBlock(ModBlocks.TIN_ORE);
-    public static final Item DEEPSLATE_TIN_ORE = registerBlock(ModBlocks.DEEPSLATE_TIN_ORE);
-    public static final Item LEAD_ORE = registerBlock(ModBlocks.LEAD_ORE);
-    public static final Item DEEPSLATE_LEAD_ORE = registerBlock(ModBlocks.DEEPSLATE_LEAD_ORE);
-    public static final Item TIN_BLOCK = registerBlock(ModBlocks.TIN_BLOCK);
-    public static final Item TIN_STAIRS = registerBlock(ModBlocks.TIN_STAIRS);
-    public static final Item TIN_SLAB = registerBlock(ModBlocks.TIN_SLAB);
-    public static final Item HOT_OBSIDIAN = registerBlock(ModBlocks.HOT_OBSIDIAN);
-    public static final Item BLAZEFLOWER = registerBlock(ModBlocks.BLAZEFLOWER);
+    public static final Item TIN_ORE = registerBlock(ModBlockItemIds.TIN_ORE,ModBlocks.TIN_ORE);
+    public static final Item DEEPSLATE_TIN_ORE = registerBlock(ModBlockItemIds.DEEPSLATE_TIN_ORE,ModBlocks.DEEPSLATE_TIN_ORE);
+    public static final Item LEAD_ORE = registerBlock(ModBlockItemIds.LEAD_ORE,ModBlocks.LEAD_ORE);
+    public static final Item DEEPSLATE_LEAD_ORE = registerBlock(ModBlockItemIds.DEEPSLATE_LEAD_ORE,ModBlocks.DEEPSLATE_LEAD_ORE);
+    public static final Item TIN_BLOCK = registerBlock(ModBlockItemIds.TIN_BLOCK,ModBlocks.TIN_BLOCK);
+    public static final Item TIN_STAIRS = registerBlock(ModBlockItemIds.TIN_STAIRS,ModBlocks.TIN_STAIRS);
+    public static final Item TIN_SLAB = registerBlock(ModBlockItemIds.TIN_SLAB,ModBlocks.TIN_SLAB);
+    public static final Item HOT_OBSIDIAN = registerBlock(ModBlockItemIds.HOT_OBSIDIAN,ModBlocks.HOT_OBSIDIAN);
+    public static final Item BLAZEFLOWER = registerBlock(ModBlockItemIds.BLAZEFLOWER,ModBlocks.BLAZEFLOWER);
     public static final Item BLAZE_TORCH = registerBlock(
-            ModBlocks.BLAZE_TORCH, (b, p) -> new StandingAndWallBlockItem(b, ModBlocks.BLAZE_WALL_TORCH, Direction.DOWN, p)
+            ModBlockItemIds.BLAZE_TORCH, ModBlocks.BLAZE_TORCH, (b, p) -> new StandingAndWallBlockItem(b, ModBlocks.WALL_BLAZE_TORCH, Direction.DOWN, p)
     );
-    public static final Item VOIDIUM_ORE = registerBlock(ModBlocks.VOIDIUM_ORE,new Item.Properties().rarity(Rarity.RARE));
-    public static final Item DEPLETED_VOIDIUM_ORE = registerBlock(ModBlocks.DEPLETED_VOIDIUM_ORE,new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final Item VOIDIUM_ORE = registerBlock(ModBlockItemIds.VOIDIUM_ORE,ModBlocks.VOIDIUM_ORE,new Item.Properties().rarity(Rarity.RARE));
+    public static final Item DEPLETED_VOIDIUM_ORE = registerBlock(ModBlockItemIds.DEPLETED_VOIDIUM_ORE,ModBlocks.DEPLETED_VOIDIUM_ORE,new Item.Properties().rarity(Rarity.UNCOMMON));
     public static final Item VOIDIUM_TORCH = registerBlock(
-            ModBlocks.VOIDIUM_TORCH, (b, p) -> new StandingAndWallBlockItem(b, ModBlocks.VOIDIUM_WALL_TORCH, Direction.DOWN, p.rarity(Rarity.UNCOMMON))
+            ModBlockItemIds.VOIDIUM_TORCH, ModBlocks.VOIDIUM_TORCH, (b, p) -> new StandingAndWallBlockItem(b, ModBlocks.WALL_VOIDIUM_TORCH, Direction.DOWN, p.rarity(Rarity.UNCOMMON))
     );
     
-    public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget");
-    public static final Item TIN_INGOT = registerItem("tin_ingot");
-    public static final Item LEAD_INGOT = registerItem("lead_ingot");
-    public static final Item RAW_TIN = registerItem("raw_tin");
-    public static final Item RAW_LEAD = registerItem("raw_lead");
-    public static final Item COAL_TAR = registerItem("coal_tar");
-    public static final Item STRAWBERRY_SEEDS = registerItem("strawberry_seeds", createBlockItemWithCustomItemName(ModBlocks.STRAWBERRY_CROP));
-    public static final Item STRAWBERRY = registerItem("strawberry", new Item.Properties().food(ModFoods.STRAWBERRY));
-    public static final Item GOLDEN_STRAWBERRY = registerItem("golden_strawberry", new Item.Properties().food(ModFoods.GOLDEN_STRAWBERRY, ModConsumables.GOLDEN_STRAWBERRY));
-    public static final Item BLAZEFLOWER_SEEDS = registerItem("blazeflower_seeds", createBlockItemWithCustomItemName(ModBlocks.BLAZEFLOWER_CROP));
-    public static final Item LEAD_SWORD = registerItem("lead_sword", new Item.Properties().sword(ModToolMaterial.LEAD, 3.0F, -2.4F));
-    public static final Item LEAD_SHOVEL = registerItem("lead_shovel", p -> new ShovelItem(ModToolMaterial.LEAD, 1.5F, -3.0F, p));
-    public static final Item LEAD_PICKAXE = registerItem("lead_pickaxe", new Item.Properties().pickaxe(ModToolMaterial.LEAD, 1.0F, -2.8F));
-    public static final Item LEAD_AXE = registerItem("lead_axe", p -> new AxeItem(ModToolMaterial.LEAD, 5.5F, -3.1F, p));
-    public static final Item LEAD_HOE = registerItem("lead_hoe", p -> new HoeItem(ModToolMaterial.LEAD, -2.5F, -0.5F, p));
+    public static final Item DIAMOND_NUGGET = registerItem(ModItemIds.DIAMOND_NUGGET);
+    public static final Item TIN_INGOT = registerItem(ModItemIds.TIN_INGOT);
+    public static final Item LEAD_INGOT = registerItem(ModItemIds.LEAD_INGOT);
+    public static final Item RAW_TIN = registerItem(ModItemIds.RAW_TIN);
+    public static final Item RAW_LEAD = registerItem(ModItemIds.RAW_LEAD);
+    public static final Item COAL_TAR = registerItem(ModItemIds.COAL_TAR);
+    public static final Item STRAWBERRY_SEEDS = registerItem(ModBlockItemIds.STRAWBERRY_CROP, createBlockItemWithCustomItemName(ModBlocks.STRAWBERRY_CROP));
+    public static final Item STRAWBERRY = registerItem(ModItemIds.STRAWBERRY, new Item.Properties().food(ModFoods.STRAWBERRY));
+    public static final Item GOLDEN_STRAWBERRY = registerItem(ModItemIds.GOLDEN_STRAWBERRY, new Item.Properties().food(ModFoods.GOLDEN_STRAWBERRY, ModConsumables.GOLDEN_STRAWBERRY));
+    public static final Item BLAZEFLOWER_SEEDS = registerItem(ModBlockItemIds.BLAZEFLOWER_CROP, createBlockItemWithCustomItemName(ModBlocks.BLAZEFLOWER_CROP));
+    public static final Item LEAD_SWORD = registerItem(ModItemIds.LEAD_SWORD, new Item.Properties().sword(ModToolMaterial.LEAD, 3.0F, -2.4F));
+    public static final Item LEAD_SHOVEL = registerItem(ModItemIds.LEAD_SHOVEL, p -> new ShovelItem(ModToolMaterial.LEAD, 1.5F, -3.0F, p));
+    public static final Item LEAD_PICKAXE = registerItem(ModItemIds.LEAD_PICKAXE, new Item.Properties().pickaxe(ModToolMaterial.LEAD, 1.0F, -2.8F));
+    public static final Item LEAD_AXE = registerItem(ModItemIds.LEAD_AXE, p -> new AxeItem(ModToolMaterial.LEAD, 5.5F, -3.1F, p));
+    public static final Item LEAD_HOE = registerItem(ModItemIds.LEAD_HOE, p -> new HoeItem(ModToolMaterial.LEAD, -2.5F, -0.5F, p));
     public static final Item LEAD_SPEAR = registerItem(
-            "lead_spear", new Item.Properties().spear(ModToolMaterial.LEAD, 0.95F, 0.95F, 0.55F, 2.5F, 10.0F, 6.75F, 5.1F, 10.5F, 4.6F)
+            ModItemIds.LEAD_SPEAR, new Item.Properties().spear(ModToolMaterial.LEAD, 0.95F, 0.95F, 0.55F, 2.5F, 10.0F, 6.75F, 5.1F, 10.5F, 4.6F)
     );
-    public static final Item LEAD_BOW = registerItem("lead_bow", LeadBowItem::new, new Item.Properties().durability(450).enchantable(1));
-    public static final Item LEAD_HELMET = registerItem("lead_helmet", new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.HELMET));
-    public static final Item LEAD_CHESTPLATE = registerItem("lead_chestplate", new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.CHESTPLATE));
-    public static final Item LEAD_LEGGINGS = registerItem("lead_leggings", new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.LEGGINGS));
-    public static final Item LEAD_BOOTS = registerItem("lead_boots", new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.BOOTS));
+    public static final Item LEAD_BOW = registerItem(ModItemIds.LEAD_BOW, LeadBowItem::new, new Item.Properties().durability(450).enchantable(1));
+    public static final Item LEAD_HELMET = registerItem(ModItemIds.LEAD_HELMET, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.HELMET));
+    public static final Item LEAD_CHESTPLATE = registerItem(ModItemIds.LEAD_CHESTPLATE, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.CHESTPLATE));
+    public static final Item LEAD_LEGGINGS = registerItem(ModItemIds.LEAD_LEGGINGS, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.LEGGINGS));
+    public static final Item LEAD_BOOTS = registerItem(ModItemIds.LEAD_BOOTS, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.BOOTS));
 
-    public static final Item BLAZE_SHARD = registerItem("blaze_shard");
-    public static final Item BLAZE_CORE = registerItem("blaze_core");
-    public static final Item INACTIVE_BLAZE_INGOT = registerItem("inactive_blaze_ingot");
-    public static final Item BLAZE_INGOT = registerItem("blaze_ingot",new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_SHARD = registerItem(ModItemIds.BLAZE_SHARD);
+    public static final Item BLAZE_CORE = registerItem(ModItemIds.BLAZE_CORE);
+    public static final Item INACTIVE_BLAZE_INGOT = registerItem(ModItemIds.INACTIVE_BLAZE_INGOT);
+    public static final Item BLAZE_INGOT = registerItem(ModItemIds.BLAZE_INGOT,new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant());
     public static final Item BLAZE_UPGRADE_SMITHING_TEMPLATE = registerItem(
-            "blaze_upgrade_smithing_template", ModSmithingTemplateItem::createBlazeUpgradeTemplate, new Item.Properties().rarity(Rarity.UNCOMMON)
+            ModItemIds.BLAZE_UPGRADE_SMITHING_TEMPLATE, ModSmithingTemplateItem::createBlazeUpgradeTemplate, new Item.Properties().rarity(Rarity.UNCOMMON)
     );
-    public static final Item BLAZE_SWORD = registerItem("blaze_sword", new Item.Properties().sword(ModToolMaterial.BLAZE, 3.0F, -2.4F).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_SHOVEL = registerItem("blaze_shovel", p -> new ShovelItem(ModToolMaterial.BLAZE, 1.5F, -3.0F, p.rarity(Rarity.UNCOMMON).fireResistant()));
-    public static final Item BLAZE_PICKAXE = registerItem("blaze_pickaxe", new Item.Properties().pickaxe(ModToolMaterial.BLAZE, 1.0F, -2.8F).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_AXE = registerItem("blaze_axe", p -> new AxeItem(ModToolMaterial.BLAZE, 5.0F, -2.9F, p.rarity(Rarity.UNCOMMON).fireResistant()));
-    public static final Item BLAZE_HOE = registerItem("blaze_hoe", p -> new HoeItem(ModToolMaterial.BLAZE, -5.0F, 1.0F, p.rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final Item BLAZE_SWORD = registerItem(ModItemIds.BLAZE_SWORD, new Item.Properties().sword(ModToolMaterial.BLAZE, 3.0F, -2.4F).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_SHOVEL = registerItem(ModItemIds.BLAZE_SHOVEL, p -> new ShovelItem(ModToolMaterial.BLAZE, 1.5F, -3.0F, p.rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final Item BLAZE_PICKAXE = registerItem(ModItemIds.BLAZE_PICKAXE, new Item.Properties().pickaxe(ModToolMaterial.BLAZE, 1.0F, -2.8F).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_AXE = registerItem(ModItemIds.BLAZE_AXE, p -> new AxeItem(ModToolMaterial.BLAZE, 5.0F, -2.9F, p.rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final Item BLAZE_HOE = registerItem(ModItemIds.BLAZE_HOE, p -> new HoeItem(ModToolMaterial.BLAZE, -5.0F, 1.0F, p.rarity(Rarity.UNCOMMON).fireResistant()));
     public static final Item BLAZE_SPEAR = registerItem(
-            "blaze_spear", new Item.Properties().spear(ModToolMaterial.BLAZE, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F).rarity(Rarity.UNCOMMON).fireResistant()
+            ModItemIds.BLAZE_SPEAR, new Item.Properties().spear(ModToolMaterial.BLAZE, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F).rarity(Rarity.UNCOMMON).fireResistant()
     );
-    public static final Item BLAZE_HELMET = registerItem("blaze_helmet", ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.HELMET).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_CHESTPLATE = registerItem("blaze_chestplate", ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.CHESTPLATE).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_LEGGINGS = registerItem("blaze_leggings", ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.LEGGINGS).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_BOOTS = registerItem("blaze_boots", ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.BOOTS).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_HELMET = registerItem(ModItemIds.BLAZE_HELMET, ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.HELMET).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_CHESTPLATE = registerItem(ModItemIds.BLAZE_CHESTPLATE, ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.CHESTPLATE).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_LEGGINGS = registerItem(ModItemIds.BLAZE_LEGGINGS, ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.LEGGINGS).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_BOOTS = registerItem(ModItemIds.BLAZE_BOOTS, ModArmor::createBlazeArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.BLAZE, ArmorType.BOOTS).rarity(Rarity.UNCOMMON).fireResistant());
 
-    public static final Item VOIDIUM = registerItem("voidium",new Item.Properties().rarity(Rarity.RARE));
-    public static final Item DEPLETED_VOIDIUM = registerItem("depleted_voidium",new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final Item VOIDIUM = registerItem(ModItemIds.VOIDIUM,new Item.Properties().rarity(Rarity.RARE));
+    public static final Item DEPLETED_VOIDIUM = registerItem(ModItemIds.DEPLETED_VOIDIUM,new Item.Properties().rarity(Rarity.UNCOMMON));
     public static final Item VOIDIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(
-            "voidium_upgrade_smithing_template", ModSmithingTemplateItem::createVoidiumUpgradeTemplate, new Item.Properties().rarity(Rarity.RARE)
+            ModItemIds.VOIDIUM_UPGRADE_SMITHING_TEMPLATE, ModSmithingTemplateItem::createVoidiumUpgradeTemplate, new Item.Properties().rarity(Rarity.RARE)
     );
-    public static final Item VOIDIUM_SWORD = registerItem("voidium_sword", new Item.Properties().sword(ModToolMaterial.VOIDIUM, 3.0F, -2.4F).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_SHOVEL = registerItem("voidium_shovel", p -> new ShovelItem(ModToolMaterial.VOIDIUM, 1.5F, -3.0F, p.rarity(Rarity.RARE).fireResistant()));
-    public static final Item VOIDIUM_PICKAXE = registerItem("voidium_pickaxe", new Item.Properties().pickaxe(ModToolMaterial.VOIDIUM, 1.0F, -2.8F).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_AXE = registerItem("voidium_axe", p -> new AxeItem(ModToolMaterial.VOIDIUM, 5.0F, -2.8F, p.rarity(Rarity.RARE).fireResistant()));
-    public static final Item VOIDIUM_HOE = registerItem("voidium_hoe", p -> new HoeItem(ModToolMaterial.VOIDIUM, -5.0F, 2.0F, p.rarity(Rarity.RARE).fireResistant()));
+    public static final Item VOIDIUM_SWORD = registerItem(ModItemIds.VOIDIUM_SWORD, new Item.Properties().sword(ModToolMaterial.VOIDIUM, 3.0F, -2.4F).rarity(Rarity.RARE).fireResistant());
+    public static final Item VOIDIUM_SHOVEL = registerItem(ModItemIds.VOIDIUM_SHOVEL, p -> new ShovelItem(ModToolMaterial.VOIDIUM, 1.5F, -3.0F, p.rarity(Rarity.RARE).fireResistant()));
+    public static final Item VOIDIUM_PICKAXE = registerItem(ModItemIds.VOIDIUM_PICKAXE, new Item.Properties().pickaxe(ModToolMaterial.VOIDIUM, 1.0F, -2.8F).rarity(Rarity.RARE).fireResistant());
+    public static final Item VOIDIUM_AXE = registerItem(ModItemIds.VOIDIUM_AXE, p -> new AxeItem(ModToolMaterial.VOIDIUM, 5.0F, -2.8F, p.rarity(Rarity.RARE).fireResistant()));
+    public static final Item VOIDIUM_HOE = registerItem(ModItemIds.VOIDIUM_HOE, p -> new HoeItem(ModToolMaterial.VOIDIUM, -5.0F, 2.0F, p.rarity(Rarity.RARE).fireResistant()));
     public static final Item VOIDIUM_SPEAR = registerItem(
-            "voidium_spear", new Item.Properties().spear(ModToolMaterial.VOIDIUM, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F).rarity(Rarity.RARE).fireResistant()
+            ModItemIds.VOIDIUM_SPEAR, new Item.Properties().spear(ModToolMaterial.VOIDIUM, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F).rarity(Rarity.RARE).fireResistant()
     );
-    public static final Item VOIDIUM_HELMET = registerItem("voidium_helmet", ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.HELMET).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_CHESTPLATE = registerItem("voidium_chestplate", ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.CHESTPLATE).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_LEGGINGS = registerItem("voidium_leggings", ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.LEGGINGS).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_BOOTS = registerItem("voidium_boots", ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.BOOTS).rarity(Rarity.RARE).fireResistant());
-    public static final Item LUMEN_FEATHER = registerItem("lumen_feather",new Item.Properties().rarity(Rarity.RARE));
-    public static final Item UMBRA_FEATHER = registerItem("umbra_feather",new Item.Properties().rarity(Rarity.RARE));
+    public static final Item VOIDIUM_HELMET = registerItem(ModItemIds.VOIDIUM_HELMET, ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.HELMET).rarity(Rarity.RARE).fireResistant());
+    public static final Item VOIDIUM_CHESTPLATE = registerItem(ModItemIds.VOIDIUM_CHESTPLATE, ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.CHESTPLATE).rarity(Rarity.RARE).fireResistant());
+    public static final Item VOIDIUM_LEGGINGS = registerItem(ModItemIds.VOIDIUM_LEGGINGS, ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.LEGGINGS).rarity(Rarity.RARE).fireResistant());
+    public static final Item VOIDIUM_BOOTS = registerItem(ModItemIds.VOIDIUM_BOOTS, ModArmor::createVoidiumArmor, new Item.Properties().humanoidArmor(ModArmorMaterials.VOIDIUM, ArmorType.BOOTS).rarity(Rarity.RARE).fireResistant());
+    public static final Item LUMEN_FEATHER = registerItem(ModItemIds.LUMEN_FEATHER,new Item.Properties().rarity(Rarity.RARE));
+    public static final Item UMBRA_FEATHER = registerItem(ModItemIds.UMBRA_FEATHER,new Item.Properties().rarity(Rarity.RARE));
     public static final Item LUMEN_ELYTRA = registerItem(
-            "lumen_elytra",
+            ModItemIds.LUMEN_ELYTRA,
             new Item.Properties()
                     .durability(800)
                     .rarity(Rarity.EPIC)
@@ -127,7 +127,7 @@ public class ModItems {
     );
 
     public static final Item UMBRA_ELYTRA = registerItem(
-            "umbra_elytra",
+            ModItemIds.UMBRA_ELYTRA,
             new Item.Properties()
                     .durability(800)
                     .rarity(Rarity.EPIC)
@@ -144,34 +144,24 @@ public class ModItems {
         return p -> new BlockItem(block, p.useItemDescriptionPrefix());
     }
 
-    private static ResourceKey<Item> ModItemId(final String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MCplusplus.MOD_ID,name));
+    private static Item registerSpawnEgg(final ResourceKey<Item> id, final EntityType<?> type) {
+        return registerItem(id, SpawnEggItem::new, new Item.Properties().spawnEgg(type));
     }
 
-    private static ResourceKey<Item> blockIdToItemId(final ResourceKey<Block> blockName) {
-        return ResourceKey.create(Registries.ITEM, blockName.identifier());
+    private static Item registerBlock(final BlockItemId id, final Block block) {
+        return registerBlock(id, block, BlockItem::new);
     }
 
-    private static Item registerSpawnEgg(final EntityType<?> type) {
-        return registerItem(
-                ResourceKey.create(Registries.ITEM, EntityType.getKey(type).withSuffix("_spawn_egg")), SpawnEggItem::new, new Item.Properties().spawnEgg(type)
-        );
+    private static Item registerBlock(final BlockItemId id, final Block block, final Item.Properties properties) {
+        return registerBlock(id, block, BlockItem::new, properties);
     }
 
-    private static Item registerBlock(final Block block) {
-        return registerBlock(block, BlockItem::new);
+    private static Item registerBlock(final BlockItemId id, final Block block, final UnaryOperator<Item.Properties> propertiesFunction) {
+        return registerBlock(id, block, (b, p) -> new BlockItem(b, propertiesFunction.apply(p)));
     }
 
-    private static Item registerBlock(final Block block, final Item.Properties properties) {
-        return registerBlock(block, BlockItem::new, properties);
-    }
-
-    private static Item registerBlock(final Block block, final UnaryOperator<Item.Properties> propertiesFunction) {
-        return registerBlock(block, (b, p) -> new BlockItem(b, propertiesFunction.apply(p)));
-    }
-
-    private static Item registerBlock(final Block block, final Block... alternatives) {
-        Item item = registerBlock(block);
+    private static Item registerBlock(final BlockItemId id, final Block block, final Block... alternatives) {
+        Item item = registerBlock(id, block);
 
         for (Block alternative : alternatives) {
             Item.BY_BLOCK.put(alternative, item);
@@ -180,45 +170,43 @@ public class ModItems {
         return item;
     }
 
-    private static Item registerBlock(final Block block, final BiFunction<Block, Item.Properties, Item> itemFactory) {
-        return registerBlock(block, itemFactory, new Item.Properties());
+    private static Item registerBlock(final BlockItemId id, final Block block, final BiFunction<Block, Item.Properties, Item> itemFactory) {
+        return registerBlock(id, block, itemFactory, new Item.Properties());
     }
 
-    private static Item registerBlock(final Block block, final BiFunction<Block, Item.Properties, Item> itemFactory, final Item.Properties properties) {
-        return registerItem(
-                blockIdToItemId(block.builtInRegistryHolder().key()),
-                p -> itemFactory.apply(block, p),
-                properties.useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures())
-        );
+    private static Item registerBlock(
+            final BlockItemId id, final Block block, final BiFunction<Block, Item.Properties, Item> itemFactory, final Item.Properties properties
+    ) {
+        return registerItem(id.item(), p -> itemFactory.apply(block, p), properties.useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures()));
     }
 
-    private static Item registerItem(final String name, final Function<Item.Properties, Item> itemFactory) {
-        return registerItem(ModItemId(name), itemFactory, new Item.Properties());
+    private static Item registerItem(final ResourceKey<Item> id, final Item.Properties properties) {
+        return registerItem(id, Item::new, properties);
     }
 
-    private static Item registerItem(final String name, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
-        return registerItem(ModItemId(name), itemFactory, properties);
+    private static Item registerItem(final ResourceKey<Item> id) {
+        return registerItem(id, Item::new, new Item.Properties());
     }
 
-    private static Item registerItem(final String name, final Item.Properties properties) {
-        return registerItem(ModItemId(name), Item::new, properties);
+    private static Item registerItem(final BlockItemId id, final Function<Item.Properties, Item> itemFactory) {
+        return registerItem(id.item(), itemFactory);
     }
 
-    private static Item registerItem(final String name) {
-        return registerItem(ModItemId(name), Item::new, new Item.Properties());
+    private static Item registerItem(final ResourceKey<Item> id, final Function<Item.Properties, Item> itemFactory) {
+        return registerItem(id, itemFactory, new Item.Properties());
     }
 
-    private static Item registerItem(final ResourceKey<Item> key, final Function<Item.Properties, Item> itemFactory) {
-        return registerItem(key, itemFactory, new Item.Properties());
+    private static Item registerItem(final BlockItemId id, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
+        return registerItem(id.item(), itemFactory, properties);
     }
 
-    private static Item registerItem(final ResourceKey<Item> key, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
-        Item item = itemFactory.apply(properties.setId(key));
+    private static Item registerItem(final ResourceKey<Item> id, final Function<Item.Properties, Item> itemFactory, final Item.Properties properties) {
+        Item item = itemFactory.apply(properties.setId(id));
         if (item instanceof BlockItem blockItem) {
             blockItem.registerBlocks(Item.BY_BLOCK, item);
         }
 
-        return Registry.register(BuiltInRegistries.ITEM, key, item);
+        return Registry.register(BuiltInRegistries.ITEM, id, item);
     }
 
     public static void register(){

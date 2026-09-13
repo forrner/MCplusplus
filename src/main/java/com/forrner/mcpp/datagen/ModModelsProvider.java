@@ -28,8 +28,8 @@ public class ModModelsProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.VOIDIUM_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.DEPLETED_VOIDIUM_ORE);
 
-        blockModelGenerators.createNormalTorch(ModBlocks.BLAZE_TORCH, ModBlocks.BLAZE_WALL_TORCH);
-        blockModelGenerators.createNormalTorch(ModBlocks.VOIDIUM_TORCH, ModBlocks.VOIDIUM_WALL_TORCH);
+        blockModelGenerators.createNormalTorch(ModBlocks.BLAZE_TORCH, ModBlocks.WALL_BLAZE_TORCH);
+        blockModelGenerators.createNormalTorch(ModBlocks.VOIDIUM_TORCH, ModBlocks.WALL_VOIDIUM_TORCH);
 
         blockModelGenerators.family(ModBlocks.TIN_BLOCK)
                 .stairs(ModBlocks.TIN_STAIRS)

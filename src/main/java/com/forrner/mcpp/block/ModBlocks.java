@@ -1,28 +1,27 @@
 package com.forrner.mcpp.block;
 
-import com.forrner.mcpp.MCplusplus;
 import com.forrner.mcpp.block.custom.Blazeflower;
 import com.forrner.mcpp.block.custom.BlazeflowerCrop;
 import com.forrner.mcpp.block.custom.StrawberryCrop;
 import com.forrner.mcpp.particle.ModParticleTypes;
+import com.forrner.mcpp.references.ModBlockIds;
+import com.forrner.mcpp.references.ModBlockItemIds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.world.level.block.piston.PistonBaseBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -38,28 +37,28 @@ public class ModBlocks {
     private static final BlockBehaviour.StatePredicate NOT_EXTENDED_PISTON = (statex, level, pos) -> !statex.getValue(PistonBaseBlock.EXTENDED);
 
     public static final Block TIN_ORE = register(
-            "tin_ore",
+            ModBlockItemIds.TIN_ORE,
             p -> new DropExperienceBlock(ConstantInt.of(0), p),
             BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)
     );
     public static final Block DEEPSLATE_TIN_ORE = register(
-            "deepslate_tin_ore",
+            ModBlockItemIds.DEEPSLATE_TIN_ORE,
             p -> new DropExperienceBlock(ConstantInt.of(0), p),
             BlockBehaviour.Properties.ofFullCopy(TIN_ORE).mapColor(MapColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)
     );
 
     public static final Block LEAD_ORE = register(
-            "lead_ore",
+            ModBlockItemIds.LEAD_ORE,
             BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)
     );
     public static final Block DEEPSLATE_LEAD_ORE = register(
-            "deepslate_lead_ore",
+            ModBlockItemIds.DEEPSLATE_LEAD_ORE,
             p -> new DropExperienceBlock(ConstantInt.of(0), p),
             BlockBehaviour.Properties.ofFullCopy(LEAD_ORE).mapColor(MapColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)
     );
 
     public static final Block HOT_OBSIDIAN = register(
-            "hot_obsidian",
+            ModBlockItemIds.HOT_OBSIDIAN,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLACK)
                     .instrument(NoteBlockInstrument.BASEDRUM)
@@ -69,7 +68,7 @@ public class ModBlocks {
     );
 
     public static final Block TIN_BLOCK = register(
-            "tin_block",
+            ModBlockItemIds.TIN_BLOCK,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.METAL)
                     .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
@@ -78,11 +77,11 @@ public class ModBlocks {
                     .sound(SoundType.IRON)
     );
 
-    public static final Block TIN_STAIRS = registerStair("tin_stairs", TIN_BLOCK);
-    public static final Block TIN_SLAB = register("tin_slab",SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(TIN_BLOCK));
+    public static final Block TIN_STAIRS = registerStair(ModBlockItemIds.TIN_STAIRS, TIN_BLOCK);
+    public static final Block TIN_SLAB = registerSlab(ModBlockItemIds.TIN_SLAB, TIN_BLOCK);
 
     public static final Block STRAWBERRY_CROP = register(
-            "strawberry_crop", StrawberryCrop::new,
+            ModBlockItemIds.STRAWBERRY_CROP, StrawberryCrop::new,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
                     .noCollision()
@@ -93,7 +92,7 @@ public class ModBlocks {
     );
 
     public static final Block BLAZEFLOWER = register(
-            "blazeflower",
+            ModBlockItemIds.BLAZEFLOWER,
             Blazeflower::new,
             BlockBehaviour.Properties.of()
                     .mapColor(MapColor.PLANT)
@@ -105,41 +104,42 @@ public class ModBlocks {
                     .pushReaction(PushReaction.DESTROY)
     );
 
-    public static final Block POTTED_BLAZEFLOWER = register("potted_blazeflower", p -> new FlowerPotBlock(BLAZEFLOWER, p), flowerPotProperties().lightLevel(statex -> 5));
+    public static final Block POTTED_BLAZEFLOWER = register(ModBlockIds.POTTED_BLAZEFLOWER, p -> new FlowerPotBlock(BLAZEFLOWER, p), flowerPotProperties().lightLevel(statex -> 5));
 
     public static final Block BLAZEFLOWER_CROP = register(
-            "blazeflower_crop",
+            ModBlockItemIds.BLAZEFLOWER_CROP,
             BlazeflowerCrop::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)
     );
 
     public static final Block BLAZE_TORCH = register(
-            "blaze_torch",
+            ModBlockItemIds.BLAZE_TORCH,
             p -> new TorchBlock(ModParticleTypes.BLAZE_FIRE_FLAME, p),
             BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
     );
-    public static final Block BLAZE_WALL_TORCH = register(
-            "blaze_wall_torch",
+    public static final Block WALL_BLAZE_TORCH = register(
+            ModBlockIds.WALL_BLAZE_TORCH,
             p -> new WallTorchBlock(ModParticleTypes.BLAZE_FIRE_FLAME, p),
             wallVariant(BLAZE_TORCH, true).noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
     );
 
-    public static final Block VOIDIUM_ORE = register("voidium_ore",
+    public static final Block VOIDIUM_ORE = register(ModBlockItemIds.VOIDIUM_ORE,
             p -> new DropExperienceBlock(UniformInt.of(12, 15), p),
             BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).lightLevel(statex -> 2).requiresCorrectToolForDrops().strength(20.0F, 1200.0F));
-    public static final Block DEPLETED_VOIDIUM_ORE = register("depleted_voidium_ore",
+    public static final Block DEPLETED_VOIDIUM_ORE = register(ModBlockItemIds.DEPLETED_VOIDIUM_ORE,
             BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).lightLevel(statex -> 1).requiresCorrectToolForDrops().strength(10.0F, 1200.0F));
 
     public static final Block VOIDIUM_TORCH = register(
-            "voidium_torch",
+            ModBlockItemIds.VOIDIUM_TORCH,
             p -> new TorchBlock(ModParticleTypes.VOIDIUM_FIRE_FLAME, p),
             BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
     );
-    public static final Block VOIDIUM_WALL_TORCH = register(
-            "voidium_wall_torch",
+    public static final Block WALL_VOIDIUM_TORCH = register(
+            ModBlockIds.WALL_VOIDIUM_TORCH,
             p -> new WallTorchBlock(ModParticleTypes.VOIDIUM_FIRE_FLAME, p),
             wallVariant(VOIDIUM_TORCH, true).noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
     );
+
 
     public static ToIntFunction<BlockState> litBlockEmission(final int lightEmission) {
         return state -> state.getValue(BlockStateProperties.LIT) ? lightEmission : 0;
@@ -153,29 +153,13 @@ public class ModBlocks {
         return false;
     }
 
-
     public static Boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return true;
     }
 
     public static Boolean ocelotOrParrot(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
-        return entityType == EntityType.OCELOT || entityType == EntityType.PARROT;
+        return entityType == EntityTypes.OCELOT || entityType == EntityTypes.PARROT;
     }
-
-    private static Block registerBed(final String id, final DyeColor color) {
-        return register(
-                id,
-                p -> new BedBlock(color, p),
-                BlockBehaviour.Properties.of()
-                        .mapColor(state -> state.getValue(BedBlock.PART) == BedPart.FOOT ? color.getMapColor() : MapColor.WOOL)
-                        .sound(SoundType.WOOD)
-                        .strength(0.2F)
-                        .noOcclusion()
-                        .ignitedByLava()
-                        .pushReaction(PushReaction.DESTROY)
-        );
-    }
-
 
     public static BlockBehaviour.Properties logProperties(final MapColor topColor, final MapColor sideColor, final SoundType soundType) {
         return BlockBehaviour.Properties.of()
@@ -190,10 +174,9 @@ public class ModBlocks {
         return BlockBehaviour.Properties.of().mapColor(state -> mapColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.STEM);
     }
 
-    static boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
+    public static boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return true;
     }
-
 
     public static boolean never(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return false;
@@ -206,24 +189,6 @@ public class ModBlocks {
     private static BlockPos postProcessAbove(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return blockPos.above();
     }
-
-    private static Block registerStainedGlass(final String id, final DyeColor color) {
-        return register(
-                id,
-                p -> new StainedGlassBlock(color, p),
-                BlockBehaviour.Properties.of()
-                        .mapColor(color)
-                        .instrument(NoteBlockInstrument.HAT)
-                        .strength(0.3F)
-                        .sound(SoundType.GLASS)
-                        .noOcclusion()
-                        .isValidSpawn(Blocks::never)
-                        .isRedstoneConductor(Blocks::never)
-                        .isSuffocating(Blocks::never)
-                        .isViewBlocking(Blocks::never)
-        );
-    }
-
 
     public static BlockBehaviour.Properties leavesProperties(final SoundType soundType) {
         return BlockBehaviour.Properties.of()
@@ -262,11 +227,9 @@ public class ModBlocks {
                 .pushReaction(PushReaction.BLOCK);
     }
 
-
     public static BlockBehaviour.Properties buttonProperties() {
         return BlockBehaviour.Properties.of().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY);
     }
-
 
     public static BlockBehaviour.Properties flowerPotProperties() {
         return BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
@@ -282,13 +245,20 @@ public class ModBlocks {
                 .pushReaction(PushReaction.DESTROY);
     }
 
-    @Deprecated
-    private static Block registerLegacyStair(final String id, final Block base) {
-        return register(id, p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofLegacyCopy(base));
+    private static Block registerLegacyStair(final BlockItemId id, final Block base) {
+        return register(id.block(), p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofLegacyCopy(base));
     }
 
-    private static Block registerStair(final String id, final Block base) {
+    private static Block registerStair(final BlockItemId id, final Block base) {
         return register(id, p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(base));
+    }
+
+    private static Block registerSlab(final BlockItemId id, final Block base) {
+        return register(id, SlabBlock::new, BlockBehaviour.Properties.ofLegacyCopy(base));
+    }
+
+    private static Block registerWall(final BlockItemId id, final Block base) {
+        return register(id, WallBlock::new, BlockBehaviour.Properties.ofLegacyCopy(base).forceSolidOn());
     }
 
     private static BlockBehaviour.Properties wallVariant(final Block standingBlock, final boolean copyName) {
@@ -300,28 +270,32 @@ public class ModBlocks {
         return wallProperties;
     }
 
+    private static Block register(final BlockItemId id, final Function<BlockBehaviour.Properties, Block> factory, final BlockBehaviour.Properties properties) {
+        return register(id.block(), factory, properties);
+    }
 
     public static Block register(final ResourceKey<Block> id, final Function<BlockBehaviour.Properties, Block> factory, final BlockBehaviour.Properties properties) {
         Block block = factory.apply(properties.setId(id));
         return Registry.register(BuiltInRegistries.BLOCK, id, block);
     }
 
+    private static Block register(final BlockItemId id, final BlockBehaviour.Properties properties) {
+        return register(id.block(), properties);
+    }
 
     public static Block register(final ResourceKey<Block> id, final BlockBehaviour.Properties properties) {
         return register(id, Block::new, properties);
     }
 
-    private static ResourceKey<Block> ModBlockId(final String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MCplusplus.MOD_ID,name));
+    static {
+        for (Block block : BuiltInRegistries.BLOCK) {
+            for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+                Block.BLOCK_STATE_REGISTRY.add(state);
+                state.initCache();
+            }
+        }
     }
 
-    private static Block register(final String id, final Function<BlockBehaviour.Properties, Block> factory, final BlockBehaviour.Properties properties) {
-        return register(ModBlockId(id), factory, properties);
-    }
-
-    private static Block register(final String id, final BlockBehaviour.Properties properties) {
-        return register(id, Block::new, properties);
-    }
     public static void register(){
 
     }

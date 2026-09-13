@@ -1,12 +1,12 @@
 package com.forrner.mcpp.datagen;
 
-import com.forrner.mcpp.item.ModItems;
+import com.forrner.mcpp.references.ModItemIds;
 import com.forrner.mcpp.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.references.ItemIds;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,120 +17,120 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
     }
 
     protected void addTags(HolderLookup.Provider provider) {
-        valueLookupBuilder(ItemTags.HEAD_ARMOR)
-                .add(ModItems.LEAD_HELMET)
-                .add(ModItems.BLAZE_HELMET)
-                .add(ModItems.VOIDIUM_HELMET);
+        builder(ItemTags.HEAD_ARMOR)
+                .add(ModItemIds.LEAD_HELMET)
+                .add(ModItemIds.BLAZE_HELMET)
+                .add(ModItemIds.VOIDIUM_HELMET);
 
-        valueLookupBuilder(ItemTags.CHEST_ARMOR)
-                .add(ModItems.LEAD_CHESTPLATE)
-                .add(ModItems.BLAZE_CHESTPLATE)
-                .add(ModItems.VOIDIUM_CHESTPLATE);
+        builder(ItemTags.CHEST_ARMOR)
+                .add(ModItemIds.LEAD_CHESTPLATE)
+                .add(ModItemIds.BLAZE_CHESTPLATE)
+                .add(ModItemIds.VOIDIUM_CHESTPLATE);
 
-        valueLookupBuilder(ItemTags.LEG_ARMOR)
-                .add(ModItems.LEAD_LEGGINGS)
-                .add(ModItems.BLAZE_LEGGINGS)
-                .add(ModItems.VOIDIUM_LEGGINGS);
+        builder(ItemTags.LEG_ARMOR)
+                .add(ModItemIds.LEAD_LEGGINGS)
+                .add(ModItemIds.BLAZE_LEGGINGS)
+                .add(ModItemIds.VOIDIUM_LEGGINGS);
 
-        valueLookupBuilder(ItemTags.FOOT_ARMOR)
-                .add(ModItems.LEAD_BOOTS)
-                .add(ModItems.BLAZE_BOOTS)
-                .add(ModItems.VOIDIUM_BOOTS);
+        builder(ItemTags.FOOT_ARMOR)
+                .add(ModItemIds.LEAD_BOOTS)
+                .add(ModItemIds.BLAZE_BOOTS)
+                .add(ModItemIds.VOIDIUM_BOOTS);
 
-        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.LEAD_HELMET)
-                .add(ModItems.LEAD_CHESTPLATE)
-                .add(ModItems.LEAD_LEGGINGS)
-                .add(ModItems.LEAD_BOOTS)
-                .add(ModItems.BLAZE_HELMET)
-                .add(ModItems.BLAZE_CHESTPLATE)
-                .add(ModItems.BLAZE_LEGGINGS)
-                .add(ModItems.BLAZE_BOOTS)
-                .add(ModItems.VOIDIUM_HELMET)
-                .add(ModItems.VOIDIUM_CHESTPLATE)
-                .add(ModItems.VOIDIUM_LEGGINGS)
-                .add(ModItems.VOIDIUM_BOOTS);
+        builder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItemIds.LEAD_HELMET)
+                .add(ModItemIds.LEAD_CHESTPLATE)
+                .add(ModItemIds.LEAD_LEGGINGS)
+                .add(ModItemIds.LEAD_BOOTS)
+                .add(ModItemIds.BLAZE_HELMET)
+                .add(ModItemIds.BLAZE_CHESTPLATE)
+                .add(ModItemIds.BLAZE_LEGGINGS)
+                .add(ModItemIds.BLAZE_BOOTS)
+                .add(ModItemIds.VOIDIUM_HELMET)
+                .add(ModItemIds.VOIDIUM_CHESTPLATE)
+                .add(ModItemIds.VOIDIUM_LEGGINGS)
+                .add(ModItemIds.VOIDIUM_BOOTS);
 
-        valueLookupBuilder(ItemTags.SWORDS)
-                .add(ModItems.LEAD_SWORD)
-                .add(ModItems.BLAZE_SWORD)
-                .add(ModItems.VOIDIUM_SWORD);
+        builder(ItemTags.SWORDS)
+                .add(ModItemIds.LEAD_SWORD)
+                .add(ModItemIds.BLAZE_SWORD)
+                .add(ModItemIds.VOIDIUM_SWORD);
 
-        valueLookupBuilder(ItemTags.SHOVELS)
-                .add(ModItems.LEAD_SHOVEL)
-                .add(ModItems.BLAZE_SHOVEL)
-                .add(ModItems.VOIDIUM_SHOVEL);
+        builder(ItemTags.SHOVELS)
+                .add(ModItemIds.LEAD_SHOVEL)
+                .add(ModItemIds.BLAZE_SHOVEL)
+                .add(ModItemIds.VOIDIUM_SHOVEL);
 
-        valueLookupBuilder(ItemTags.PICKAXES)
-                .add(ModItems.LEAD_PICKAXE)
-                .add(ModItems.BLAZE_PICKAXE)
-                .add(ModItems.VOIDIUM_PICKAXE);
+        builder(ItemTags.PICKAXES)
+                .add(ModItemIds.LEAD_PICKAXE)
+                .add(ModItemIds.BLAZE_PICKAXE)
+                .add(ModItemIds.VOIDIUM_PICKAXE);
 
-        valueLookupBuilder(ItemTags.AXES)
-                .add(ModItems.LEAD_AXE)
-                .add(ModItems.BLAZE_AXE)
-                .add(ModItems.VOIDIUM_AXE);
+        builder(ItemTags.AXES)
+                .add(ModItemIds.LEAD_AXE)
+                .add(ModItemIds.BLAZE_AXE)
+                .add(ModItemIds.VOIDIUM_AXE);
 
-        valueLookupBuilder(ItemTags.HOES)
-                .add(ModItems.LEAD_HOE)
-                .add(ModItems.BLAZE_HOE)
-                .add(ModItems.VOIDIUM_HOE);
+        builder(ItemTags.HOES)
+                .add(ModItemIds.LEAD_HOE)
+                .add(ModItemIds.BLAZE_HOE)
+                .add(ModItemIds.VOIDIUM_HOE);
 
-        valueLookupBuilder(ItemTags.SPEARS)
-                .add(ModItems.LEAD_SPEAR)
-                .add(ModItems.BLAZE_SPEAR)
-                .add(ModItems.VOIDIUM_SPEAR);
+        builder(ItemTags.SPEARS)
+                .add(ModItemIds.LEAD_SPEAR)
+                .add(ModItemIds.BLAZE_SPEAR)
+                .add(ModItemIds.VOIDIUM_SPEAR);
 
-        valueLookupBuilder(ItemTags.SKELETON_PREFERRED_WEAPONS)
-                .add(ModItems.LEAD_BOW);
+        builder(ItemTags.SKELETON_PREFERRED_WEAPONS)
+                .add(ModItemIds.LEAD_BOW);
 
-        valueLookupBuilder(ItemTags.WITHER_SKELETON_DISLIKED_WEAPONS)
-                .add(ModItems.LEAD_BOW);
+        builder(ItemTags.WITHER_SKELETON_DISLIKED_WEAPONS)
+                .add(ModItemIds.LEAD_BOW);
 
-        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
-                .add(ModItems.LEAD_BOW);
+        builder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItemIds.LEAD_BOW);
 
-        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE)
-                .add(ModItems.LUMEN_ELYTRA)
-                .add(ModItems.UMBRA_ELYTRA);
+        builder(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ModItemIds.LUMEN_ELYTRA)
+                .add(ModItemIds.UMBRA_ELYTRA);
 
-        valueLookupBuilder(ItemTags.EQUIPPABLE_ENCHANTABLE)
-                .add(ModItems.LUMEN_ELYTRA)
-                .add(ModItems.UMBRA_ELYTRA);
+        builder(ItemTags.EQUIPPABLE_ENCHANTABLE)
+                .add(ModItemIds.LUMEN_ELYTRA)
+                .add(ModItemIds.UMBRA_ELYTRA);
 
-        valueLookupBuilder(ModItemTags.SUGAR)
-                .add(Items.BEETROOT)
-                .add(ModItems.STRAWBERRY);
+        builder(ModItemTags.SUGAR)
+                .add(ItemIds.BEETROOT)
+                .add(ModItemIds.STRAWBERRY);
 
-        valueLookupBuilder(ModItemTags.LEAD_TOOL_MATERIALS)
-                .add(ModItems.LEAD_INGOT);
+        builder(ModItemTags.LEAD_TOOL_MATERIALS)
+                .add(ModItemIds.LEAD_INGOT);
 
-        valueLookupBuilder(ModItemTags.REPAIRS_LEAD_ARMOR)
-                .add(ModItems.LEAD_INGOT);
+        builder(ModItemTags.REPAIRS_LEAD_ARMOR)
+                .add(ModItemIds.LEAD_INGOT);
 
-        valueLookupBuilder(ModItemTags.BLAZE_TOOL_MATERIALS)
-                .add(ModItems.BLAZE_INGOT);
+        builder(ModItemTags.BLAZE_TOOL_MATERIALS)
+                .add(ModItemIds.BLAZE_INGOT);
 
-        valueLookupBuilder(ModItemTags.REPAIRS_BLAZE_ARMOR)
-                .add(ModItems.BLAZE_INGOT);
+        builder(ModItemTags.REPAIRS_BLAZE_ARMOR)
+                .add(ModItemIds.BLAZE_INGOT);
 
-        valueLookupBuilder(ModItemTags.VOIDIUM_TOOL_MATERIALS)
-                .add(ModItems.VOIDIUM);
+        builder(ModItemTags.VOIDIUM_TOOL_MATERIALS)
+                .add(ModItemIds.VOIDIUM);
 
-        valueLookupBuilder(ModItemTags.REPAIRS_VOIDIUM_ARMOR)
-                .add(ModItems.VOIDIUM);
+        builder(ModItemTags.REPAIRS_VOIDIUM_ARMOR)
+                .add(ModItemIds.VOIDIUM);
 
-        valueLookupBuilder(ModItemTags.BLAZE_ARMOR)
-                .add(ModItems.BLAZE_HELMET)
-                .add(ModItems.BLAZE_CHESTPLATE)
-                .add(ModItems.BLAZE_LEGGINGS)
-                .add(ModItems.BLAZE_BOOTS);
+        builder(ModItemTags.BLAZE_ARMOR)
+                .add(ModItemIds.BLAZE_HELMET)
+                .add(ModItemIds.BLAZE_CHESTPLATE)
+                .add(ModItemIds.BLAZE_LEGGINGS)
+                .add(ModItemIds.BLAZE_BOOTS);
 
-        valueLookupBuilder(ModItemTags.VOIDIUM_ARMOR)
-                .add(ModItems.VOIDIUM_HELMET)
-                .add(ModItems.VOIDIUM_CHESTPLATE)
-                .add(ModItems.VOIDIUM_LEGGINGS)
-                .add(ModItems.VOIDIUM_BOOTS);
+        builder(ModItemTags.VOIDIUM_ARMOR)
+                .add(ModItemIds.VOIDIUM_HELMET)
+                .add(ModItemIds.VOIDIUM_CHESTPLATE)
+                .add(ModItemIds.VOIDIUM_LEGGINGS)
+                .add(ModItemIds.VOIDIUM_BOOTS);
 
     }
 }

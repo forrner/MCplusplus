@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "mcpp:inactive_blaze_ingot",
     "mcpp:blaze_core"

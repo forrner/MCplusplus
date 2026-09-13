@@ -1,6 +1,5 @@
-// 26.1.2	-999999999-01-01T00:00:00	MCplusplus/Model Definitions
+// 26.2	-999999999-01-01T00:00:00	MCplusplus/Model Definitions
 c8eb0fc6b1f06f27d211254bf3ec18936ddd0b83 assets/mcpp/blockstates/blaze_torch.json
-ca3974b6872a16f43f0023e4ca2ef3a1eb95ec30 assets/mcpp/blockstates/blaze_wall_torch.json
 9a95ea2d7926a3dd6e63c15258e69779a0d6ab60 assets/mcpp/blockstates/blazeflower.json
 5ff19549083eda8f1c58123584e7a28b4ed33423 assets/mcpp/blockstates/blazeflower_crop.json
 7aa80b021904382ecd17c1bc7353191fc80e96c4 assets/mcpp/blockstates/deepslate_lead_ore.json
@@ -16,7 +15,8 @@ b09f799d0308fc779edbe613fcd373aa8b70f5c3 assets/mcpp/blockstates/tin_slab.json
 0d508ced0b20859fb68d62d3d58f8e2d18258151 assets/mcpp/blockstates/tin_stairs.json
 7098a23095f83741edbd979625cf90ca88ec88ec assets/mcpp/blockstates/voidium_ore.json
 ea8d6518fd12af53a4eba11051da365511484577 assets/mcpp/blockstates/voidium_torch.json
-a48464e37454b3c623e334e49bd8dee8065d571f assets/mcpp/blockstates/voidium_wall_torch.json
+a945411cead4e514a5f7b6c0eceddc34cf1b3b79 assets/mcpp/blockstates/wall_blaze_torch.json
+65652cea42d96b68a046b95685205c2b8707afc5 assets/mcpp/blockstates/wall_voidium_torch.json
 a10bedf8c6b485b1de0f796274cdc9320e536ced assets/mcpp/items/blaze_axe.json
 043dd550f02dcf7cb36dca61c5f1e65949279800 assets/mcpp/items/blaze_boots.json
 21c861e2e75004dfd1e98c49c0a117d771648102 assets/mcpp/items/blaze_chestplate.json
@@ -84,7 +84,6 @@ d092ae824b96f9b1f77ca9ce2a1f622811206fba assets/mcpp/items/voidium_shovel.json
 27f8b0fe43ecfe822253a93aa612efc7845c11a5 assets/mcpp/items/voidium_torch.json
 b2166ec6769ed2f0fe002237b5679fab16d2e58a assets/mcpp/items/voidium_upgrade_smithing_template.json
 68d89847e5093c06e305ee313542247d31877e86 assets/mcpp/models/block/blaze_torch.json
-636a27ede93988379df8dea590af86218c6800a9 assets/mcpp/models/block/blaze_wall_torch.json
 282d5a924773bceb12d1fcd8c44900134a025b3a assets/mcpp/models/block/blazeflower.json
 e8ac3946f3a9cb651e4e9ad972f9ee3b7abba8c1 assets/mcpp/models/block/blazeflower_crop_stage0.json
 ff672005f25a413c5eeb0ea62adddf2bec703bbd assets/mcpp/models/block/blazeflower_crop_stage1.json
@@ -109,7 +108,8 @@ e99eb88a49bb2c5520406a9f7b6355a7dce1a7dc assets/mcpp/models/block/tin_stairs.jso
 dbcfcbc61edc5c5c60c640207f27628e72e8e2f7 assets/mcpp/models/block/tin_stairs_outer.json
 7af1628eeff5268c5a6fc23984a1bddd5580fc78 assets/mcpp/models/block/voidium_ore.json
 f2b5d9f1c6544a82f22eac9467827822bf0fd446 assets/mcpp/models/block/voidium_torch.json
-9f8b9b8ab73556a90ed1be150ab6f6814160521d assets/mcpp/models/block/voidium_wall_torch.json
+636a27ede93988379df8dea590af86218c6800a9 assets/mcpp/models/block/wall_blaze_torch.json
+9f8b9b8ab73556a90ed1be150ab6f6814160521d assets/mcpp/models/block/wall_voidium_torch.json
 983aca73abfe9644e117b92a90e55239e6b44f1f assets/mcpp/models/item/blaze_axe.json
 cb512f3586940cff3e9ff042d7f2b58ca1af7029 assets/mcpp/models/item/blaze_boots.json
 3721bcef84a14d778569c45541dcc37a2295a7f5 assets/mcpp/models/item/blaze_boots_amethyst_trim.json
