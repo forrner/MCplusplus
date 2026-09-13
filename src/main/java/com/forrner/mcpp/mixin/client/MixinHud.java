@@ -2,8 +2,8 @@ package com.forrner.mcpp.mixin.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.Hud;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
@@ -11,8 +11,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Environment(EnvType.CLIENT)
-@Mixin(Gui.class)
-public class MixinGui {
+@Mixin(Hud.class)
+public class MixinHud {
 
     /**
      * @reason 支持显示 30 点护甲值，超出 20 点的部分在第二行显示
