@@ -287,15 +287,6 @@ public class ModBlocks {
         return register(id, Block::new, properties);
     }
 
-    static {
-        for (Block block : BuiltInRegistries.BLOCK) {
-            for (BlockState state : block.getStateDefinition().getPossibleStates()) {
-                Block.BLOCK_STATE_REGISTRY.add(state);
-                state.initCache();
-            }
-        }
-    }
-
     public static void register(){
 
     }

@@ -18,7 +18,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     }
 
     protected void addTags(HolderLookup.Provider provider){
-      builder(BlockTags.MINEABLE_WITH_PICKAXE)
+        builder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlockItemIds.TIN_ORE)
                 .add(ModBlockItemIds.DEEPSLATE_TIN_ORE)
                 .add(ModBlockItemIds.LEAD_ORE)
@@ -29,6 +29,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlockItemIds.HOT_OBSIDIAN)
                 .add(ModBlockItemIds.VOIDIUM_ORE)
                 .add(ModBlockItemIds.DEPLETED_VOIDIUM_ORE);
+
+
 
         builder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlockItemIds.TIN_ORE)
@@ -43,12 +45,43 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlockItemIds.LEAD_ORE)
                 .add(ModBlockItemIds.DEEPSLATE_LEAD_ORE);
 
-        builder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+        builder(ModBlockTags.NEEDS_NETHERITE_TOOL)
                 .add(ModBlockItemIds.HOT_OBSIDIAN);
 
-        builder(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+        builder(ModBlockTags.NEEDS_BLAZE_TOOL)
                 .add(ModBlockItemIds.VOIDIUM_ORE)
                 .add(ModBlockItemIds.DEPLETED_VOIDIUM_ORE);
+
+
+
+        builder(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .addTag(ModBlockTags.NEEDS_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+        builder(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+                .addTag(ModBlockTags.NEEDS_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+        builder(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .addTag(ModBlockTags.NEEDS_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+        builder(BlockTags.INCORRECT_FOR_COPPER_TOOL)
+                .addTag(ModBlockTags.NEEDS_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+        builder(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .addTag(ModBlockTags.NEEDS_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+        builder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .addTag(ModBlockTags.NEEDS_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+        builder(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+                .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
+
+
 
         builder(BlockTags.SMALL_FLOWERS)
                 .add(ModBlockItemIds.BLAZEFLOWER);
