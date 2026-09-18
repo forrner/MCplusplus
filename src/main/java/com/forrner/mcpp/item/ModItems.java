@@ -60,10 +60,10 @@ public class ModItems {
     public static final Item GOLDEN_STRAWBERRY = registerItem(ModItemIds.GOLDEN_STRAWBERRY, new Item.Properties().food(ModFoods.GOLDEN_STRAWBERRY, ModConsumables.GOLDEN_STRAWBERRY));
     public static final Item BLAZEFLOWER_SEEDS = registerItem(ModBlockItemIds.BLAZEFLOWER_CROP, createBlockItemWithCustomItemName(ModBlocks.BLAZEFLOWER_CROP));
     public static final Item LEAD_SWORD = registerItem(ModItemIds.LEAD_SWORD, new Item.Properties().sword(ModToolMaterial.LEAD, 3.0F, -2.4F));
-    public static final Item LEAD_SHOVEL = registerItem(ModItemIds.LEAD_SHOVEL, p -> new ShovelItem(ModToolMaterial.LEAD, 1.5F, -3.0F, p));
+    public static final Item LEAD_SHOVEL = registerItem(ModItemIds.LEAD_SHOVEL, new Item.Properties().shovel(ModToolMaterial.LEAD, 1.5F, -3.0F));
     public static final Item LEAD_PICKAXE = registerItem(ModItemIds.LEAD_PICKAXE, new Item.Properties().pickaxe(ModToolMaterial.LEAD, 1.0F, -2.8F));
-    public static final Item LEAD_AXE = registerItem(ModItemIds.LEAD_AXE, p -> new AxeItem(ModToolMaterial.LEAD, 5.5F, -3.1F, p));
-    public static final Item LEAD_HOE = registerItem(ModItemIds.LEAD_HOE, p -> new HoeItem(ModToolMaterial.LEAD, -2.5F, -0.5F, p));
+    public static final Item LEAD_AXE = registerItem(ModItemIds.LEAD_AXE, new Item.Properties().axe(ModToolMaterial.LEAD, 5.5F, -3.1F));
+    public static final Item LEAD_HOE = registerItem(ModItemIds.LEAD_HOE, new Item.Properties().hoe(ModToolMaterial.LEAD, -2.5F, -0.5F));
     public static final Item LEAD_SPEAR = registerItem(
             ModItemIds.LEAD_SPEAR, new Item.Properties().spear(ModToolMaterial.LEAD, 0.95F, 0.95F, 0.55F, 2.5F, 10.0F, 6.75F, 5.1F, 10.5F, 4.6F)
     );
@@ -81,10 +81,10 @@ public class ModItems {
             ModItemIds.BLAZE_UPGRADE_SMITHING_TEMPLATE, ModSmithingTemplateItem::createBlazeUpgradeTemplate, new Item.Properties().rarity(Rarity.UNCOMMON)
     );
     public static final Item BLAZE_SWORD = registerItem(ModItemIds.BLAZE_SWORD, new Item.Properties().sword(ModToolMaterial.BLAZE, 3.0F, -2.4F).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_SHOVEL = registerItem(ModItemIds.BLAZE_SHOVEL, p -> new ShovelItem(ModToolMaterial.BLAZE, 1.5F, -3.0F, p.rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final Item BLAZE_SHOVEL = registerItem(ModItemIds.BLAZE_SHOVEL, new Item.Properties().shovel(ModToolMaterial.BLAZE, 1.5F, -3.0F).rarity(Rarity.UNCOMMON).fireResistant());
     public static final Item BLAZE_PICKAXE = registerItem(ModItemIds.BLAZE_PICKAXE, new Item.Properties().pickaxe(ModToolMaterial.BLAZE, 1.0F, -2.8F).rarity(Rarity.UNCOMMON).fireResistant());
-    public static final Item BLAZE_AXE = registerItem(ModItemIds.BLAZE_AXE, p -> new AxeItem(ModToolMaterial.BLAZE, 5.0F, -2.9F, p.rarity(Rarity.UNCOMMON).fireResistant()));
-    public static final Item BLAZE_HOE = registerItem(ModItemIds.BLAZE_HOE, p -> new HoeItem(ModToolMaterial.BLAZE, -5.0F, 1.0F, p.rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final Item BLAZE_AXE = registerItem(ModItemIds.BLAZE_AXE, new Item.Properties().axe(ModToolMaterial.BLAZE, 5.0F, -2.9F).rarity(Rarity.UNCOMMON).fireResistant());
+    public static final Item BLAZE_HOE = registerItem(ModItemIds.BLAZE_HOE, new Item.Properties().hoe(ModToolMaterial.BLAZE, -5.0F, 1.0F).rarity(Rarity.UNCOMMON).fireResistant());
     public static final Item BLAZE_SPEAR = registerItem(
             ModItemIds.BLAZE_SPEAR, new Item.Properties().spear(ModToolMaterial.BLAZE, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F).rarity(Rarity.UNCOMMON).fireResistant()
     );
@@ -99,10 +99,10 @@ public class ModItems {
             ModItemIds.VOIDIUM_UPGRADE_SMITHING_TEMPLATE, ModSmithingTemplateItem::createVoidiumUpgradeTemplate, new Item.Properties().rarity(Rarity.RARE)
     );
     public static final Item VOIDIUM_SWORD = registerItem(ModItemIds.VOIDIUM_SWORD, new Item.Properties().sword(ModToolMaterial.VOIDIUM, 3.0F, -2.4F).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_SHOVEL = registerItem(ModItemIds.VOIDIUM_SHOVEL, p -> new ShovelItem(ModToolMaterial.VOIDIUM, 1.5F, -3.0F, p.rarity(Rarity.RARE).fireResistant()));
+    public static final Item VOIDIUM_SHOVEL = registerItem(ModItemIds.VOIDIUM_SHOVEL, new Item.Properties().shovel(ModToolMaterial.VOIDIUM, 1.5F, -3.0F).rarity(Rarity.RARE).fireResistant());
     public static final Item VOIDIUM_PICKAXE = registerItem(ModItemIds.VOIDIUM_PICKAXE, new Item.Properties().pickaxe(ModToolMaterial.VOIDIUM, 1.0F, -2.8F).rarity(Rarity.RARE).fireResistant());
-    public static final Item VOIDIUM_AXE = registerItem(ModItemIds.VOIDIUM_AXE, p -> new AxeItem(ModToolMaterial.VOIDIUM, 5.0F, -2.8F, p.rarity(Rarity.RARE).fireResistant()));
-    public static final Item VOIDIUM_HOE = registerItem(ModItemIds.VOIDIUM_HOE, p -> new HoeItem(ModToolMaterial.VOIDIUM, -5.0F, 2.0F, p.rarity(Rarity.RARE).fireResistant()));
+    public static final Item VOIDIUM_AXE = registerItem(ModItemIds.VOIDIUM_AXE, new Item.Properties().axe(ModToolMaterial.VOIDIUM, 5.0F, -2.8F).rarity(Rarity.RARE).fireResistant());
+    public static final Item VOIDIUM_HOE = registerItem(ModItemIds.VOIDIUM_HOE, new Item.Properties().hoe(ModToolMaterial.VOIDIUM, -5.0F, 2.0F).rarity(Rarity.RARE).fireResistant());
     public static final Item VOIDIUM_SPEAR = registerItem(
             ModItemIds.VOIDIUM_SPEAR, new Item.Properties().spear(ModToolMaterial.VOIDIUM, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F).rarity(Rarity.RARE).fireResistant()
     );

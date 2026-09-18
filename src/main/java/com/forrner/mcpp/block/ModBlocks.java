@@ -22,20 +22,30 @@ import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.world.level.block.piston.PistonBaseBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.SolidDebugger;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.AABB;
 
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
 public class ModBlocks {
-    private static final BlockBehaviour.StatePredicate NOT_CLOSED_SHULKER = (statex, level, pos) -> level.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity shulkerBoxBlockEntity
+    private static final BlockBehaviour.StatePredicate NOT_CLOSED_SHULKER = (state, level, pos) -> level.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity shulkerBoxBlockEntity
             ? shulkerBoxBlockEntity.isClosed()
             : true;
-    private static final BlockBehaviour.StatePredicate NOT_EXTENDED_PISTON = (statex, level, pos) -> !statex.getValue(PistonBaseBlock.EXTENDED);
+    private static final BlockBehaviour.StatePredicate NOT_EXTENDED_PISTON = (state, level, pos) -> !state.getValue(PistonBaseBlock.EXTENDED);
+    private static final BlockBehaviour.StateArgumentPredicate<AABB> NEAR_PLANE_INTERSECTS_OUTLINE = (state, level, blockPos, nearPlaneBox) -> {
+        for (AABB outlineBox : state.getOcclusionShape().toAabbs()) {
+            if (outlineBox.move(blockPos).intersects(nearPlaneBox)) {
+                return true;
+            }
+        }
 
+        return false;
+    };
     public static final Block TIN_ORE = register(
             ModBlockItemIds.TIN_ORE,
             p -> new DropExperienceBlock(ConstantInt.of(0), p),
@@ -88,7 +98,7 @@ public class ModBlocks {
                     .randomTicks()
                     .instabreak()
                     .sound(SoundType.CROP)
-                    .pushReaction(PushReaction.DESTROY)
+                    .pushReaction(PushReaction.POPPED)
     );
 
     public static final Block BLAZEFLOWER = register(
@@ -101,7 +111,7 @@ public class ModBlocks {
                     .sound(SoundType.GRASS)
                     .lightLevel(statex -> 5)
                     .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)
+                    .pushReaction(PushReaction.POPPED)
     );
 
     public static final Block POTTED_BLAZEFLOWER = register(ModBlockIds.POTTED_BLAZEFLOWER, p -> new FlowerPotBlock(BLAZEFLOWER, p), flowerPotProperties().lightLevel(statex -> 5));
@@ -109,18 +119,18 @@ public class ModBlocks {
     public static final Block BLAZEFLOWER_CROP = register(
             ModBlockItemIds.BLAZEFLOWER_CROP,
             BlazeflowerCrop::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.POPPED)
     );
 
     public static final Block BLAZE_TORCH = register(
             ModBlockItemIds.BLAZE_TORCH,
             p -> new TorchBlock(ModParticleTypes.BLAZE_FIRE_FLAME, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
+            BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.POPPED)
     );
     public static final Block WALL_BLAZE_TORCH = register(
             ModBlockIds.WALL_BLAZE_TORCH,
             p -> new WallTorchBlock(ModParticleTypes.BLAZE_FIRE_FLAME, p),
-            wallVariant(BLAZE_TORCH, true).noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
+            wallVariant(BLAZE_TORCH, true).noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.POPPED)
     );
 
     public static final Block VOIDIUM_ORE = register(ModBlockItemIds.VOIDIUM_ORE,
@@ -132,12 +142,12 @@ public class ModBlocks {
     public static final Block VOIDIUM_TORCH = register(
             ModBlockItemIds.VOIDIUM_TORCH,
             p -> new TorchBlock(ModParticleTypes.VOIDIUM_FIRE_FLAME, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
+            BlockBehaviour.Properties.of().noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.POPPED)
     );
     public static final Block WALL_VOIDIUM_TORCH = register(
             ModBlockIds.WALL_VOIDIUM_TORCH,
             p -> new WallTorchBlock(ModParticleTypes.VOIDIUM_FIRE_FLAME, p),
-            wallVariant(VOIDIUM_TORCH, true).noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)
+            wallVariant(VOIDIUM_TORCH, true).noCollision().instabreak().lightLevel(statex -> 14).sound(SoundType.WOOD).pushReaction(PushReaction.POPPED)
     );
 
 
@@ -149,18 +159,30 @@ public class ModBlocks {
         return blockState -> blockState.getValue(BlockStateProperties.WATERLOGGED) ? MapColor.WATER : mapColor;
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static Boolean never(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return false;
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static Boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return true;
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static Boolean ocelotOrParrot(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return entityType == EntityTypes.OCELOT || entityType == EntityTypes.PARROT;
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static BlockBehaviour.Properties logProperties(final MapColor topColor, final MapColor sideColor, final SoundType soundType) {
         return BlockBehaviour.Properties.of()
                 .mapColor(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor)
@@ -170,14 +192,23 @@ public class ModBlocks {
                 .ignitedByLava();
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static BlockBehaviour.Properties netherStemProperties(final MapColor mapColor) {
         return BlockBehaviour.Properties.of().mapColor(state -> mapColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.STEM);
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return true;
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static boolean never(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return false;
     }
@@ -190,6 +221,9 @@ public class ModBlocks {
         return blockPos.above();
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static BlockBehaviour.Properties leavesProperties(final SoundType soundType) {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
@@ -199,9 +233,8 @@ public class ModBlocks {
                 .noOcclusion()
                 .isValidSpawn(Blocks::ocelotOrParrot)
                 .isSuffocating(Blocks::never)
-                .isViewBlocking(Blocks::never)
                 .ignitedByLava()
-                .pushReaction(PushReaction.DESTROY)
+                .pushReaction(PushReaction.POPPED)
                 .isRedstoneConductor(Blocks::never);
     }
 
@@ -213,8 +246,7 @@ public class ModBlocks {
                 .dynamicShape()
                 .noOcclusion()
                 .isSuffocating(NOT_CLOSED_SHULKER)
-                .isViewBlocking(NOT_CLOSED_SHULKER)
-                .pushReaction(PushReaction.DESTROY);
+                .pushReaction(PushReaction.POPPED);
     }
 
     private static BlockBehaviour.Properties pistonProperties() {
@@ -223,16 +255,21 @@ public class ModBlocks {
                 .strength(1.5F)
                 .isRedstoneConductor(Blocks::never)
                 .isSuffocating(NOT_EXTENDED_PISTON)
-                .isViewBlocking(NOT_EXTENDED_PISTON)
-                .pushReaction(PushReaction.BLOCK);
+                .pushReaction(PushReaction.IMMOVEABLE);
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static BlockBehaviour.Properties buttonProperties() {
-        return BlockBehaviour.Properties.of().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY);
+        return BlockBehaviour.Properties.of().noCollision().strength(0.5F).pushReaction(PushReaction.POPPED);
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static BlockBehaviour.Properties flowerPotProperties() {
-        return BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+        return BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.POPPED);
     }
 
     private static BlockBehaviour.Properties candleProperties(final MapColor color) {
@@ -242,19 +279,33 @@ public class ModBlocks {
                 .strength(0.1F)
                 .sound(SoundType.CANDLE)
                 .lightLevel(CandleBlock.LIGHT_EMISSION)
-                .pushReaction(PushReaction.DESTROY);
+                .pushReaction(PushReaction.POPPED);
     }
 
     private static Block registerLegacyStair(final BlockItemId id, final Block base) {
-        return register(id.block(), p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofLegacyCopy(base));
+        return register(
+                id.block(), p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofLegacyCopy(base).isViewBlocking(NEAR_PLANE_INTERSECTS_OUTLINE)
+        );
     }
 
     private static Block registerStair(final BlockItemId id, final Block base) {
-        return register(id, p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(base));
+        return register(
+                id, p -> new StairBlock(base.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(base).isViewBlocking(NEAR_PLANE_INTERSECTS_OUTLINE)
+        );
     }
 
     private static Block registerSlab(final BlockItemId id, final Block base) {
-        return register(id, SlabBlock::new, BlockBehaviour.Properties.ofLegacyCopy(base));
+        return register(id, SlabBlock::new, BlockBehaviour.Properties.ofLegacyCopy(base).isViewBlocking(NEAR_PLANE_INTERSECTS_OUTLINE));
+    }
+
+    private static Block registerSlab(final BlockItemId id, final Block base, final float destroyTime) {
+        return register(id, SlabBlock::new, BlockBehaviour.Properties.ofLegacyCopy(base).isViewBlocking(NEAR_PLANE_INTERSECTS_OUTLINE).destroyTime(destroyTime));
+    }
+
+    private static Block registerSlab(final BlockItemId id, final Block base, final float destroyTime, final float explosionResistance) {
+        return register(
+                id, SlabBlock::new, BlockBehaviour.Properties.ofLegacyCopy(base).isViewBlocking(NEAR_PLANE_INTERSECTS_OUTLINE).strength(destroyTime, explosionResistance)
+        );
     }
 
     private static Block registerWall(final BlockItemId id, final Block base) {
@@ -274,6 +325,9 @@ public class ModBlocks {
         return register(id.block(), factory, properties);
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static Block register(final ResourceKey<Block> id, final Function<BlockBehaviour.Properties, Block> factory, final BlockBehaviour.Properties properties) {
         Block block = factory.apply(properties.setId(id));
         return Registry.register(BuiltInRegistries.BLOCK, id, block);
@@ -283,10 +337,23 @@ public class ModBlocks {
         return register(id.block(), properties);
     }
 
+    /**
+     * Access widened by fabric-transitive-access-wideners-v1 to accessible
+     */
     public static Block register(final ResourceKey<Block> id, final BlockBehaviour.Properties properties) {
         return register(id, Block::new, properties);
     }
 
+    static {
+        SolidDebugger.runAndDump(() -> {
+            for (Block block : BuiltInRegistries.BLOCK) {
+                for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+                    Block.BLOCK_STATE_REGISTRY.add(state);
+                    state.initCache();
+                }
+            }
+        });
+    }
     public static void register(){
 
     }
