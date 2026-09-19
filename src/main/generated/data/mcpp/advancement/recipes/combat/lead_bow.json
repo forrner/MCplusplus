@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:lead_bow"
+        "recipes": "mcpp:lead_bow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

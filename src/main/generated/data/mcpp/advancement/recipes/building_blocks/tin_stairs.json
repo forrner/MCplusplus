@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:tin_stairs"
+        "recipes": "mcpp:tin_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

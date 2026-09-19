@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:lead_hoe"
+        "recipes": "mcpp:lead_hoe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:lumen_elytra"
+        "recipes": "mcpp:lumen_elytra"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

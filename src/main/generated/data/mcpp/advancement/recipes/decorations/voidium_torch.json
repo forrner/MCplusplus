@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:voidium_torch"
+        "recipes": "mcpp:voidium_torch"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

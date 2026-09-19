@@ -24,7 +24,7 @@ public class MCplusplusDataGenerator implements DataGeneratorEntrypoint {
 	}
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, ModOreFeatures::bootstrap);
+		registryBuilder.add(Registries.FEATURE, ModOreFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, ModOrePlacements::bootstrap);
 	}
 }

@@ -9,7 +9,6 @@ import com.forrner.mcpp.item.equipment.ModEquipmentAssets;
 import com.forrner.mcpp.references.ModBlockItemIds;
 import com.forrner.mcpp.references.ModItemIds;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
@@ -21,9 +20,13 @@ import net.minecraft.util.Unit;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.CookingFuel;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
+import net.minecraft.world.level.storage.loot.providers.number.floats.ResolvableFloat;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -54,7 +57,9 @@ public class ModItems {
     public static final Item LEAD_INGOT = registerItem(ModItemIds.LEAD_INGOT);
     public static final Item RAW_TIN = registerItem(ModItemIds.RAW_TIN);
     public static final Item RAW_LEAD = registerItem(ModItemIds.RAW_LEAD);
-    public static final Item COAL_TAR = registerItem(ModItemIds.COAL_TAR);
+    public static final Item COAL_TAR = registerItem(ModItemIds.COAL_TAR,new Item.Properties().component(DataComponents.COOKING_FUEL,
+            new CookingFuel(new ResolvableInt.Constant(18000), ResolvableFloat.fromKey(ContextFloatProviders.COOKING_DEFAULT_SPEED_MULTIPLIER)))
+    );
     public static final Item STRAWBERRY_SEEDS = registerItem(ModBlockItemIds.STRAWBERRY_CROP, createBlockItemWithCustomItemName(ModBlocks.STRAWBERRY_CROP));
     public static final Item STRAWBERRY = registerItem(ModItemIds.STRAWBERRY, new Item.Properties().food(ModFoods.STRAWBERRY));
     public static final Item GOLDEN_STRAWBERRY = registerItem(ModItemIds.GOLDEN_STRAWBERRY, new Item.Properties().food(ModFoods.GOLDEN_STRAWBERRY, ModConsumables.GOLDEN_STRAWBERRY));
@@ -210,10 +215,6 @@ public class ModItems {
     }
 
     public static void register(){
-
-        FuelValueEvents.BUILD.register((builder, context) -> {
-            builder.add(ModItems.COAL_TAR, 18000);
-        });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register(FabricCreativeModeTabOutput->{

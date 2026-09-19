@@ -8,27 +8,21 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
 public class ModOrePlacements {
-    public static final ResourceKey<PlacedFeature> ORE_TIN =  ResourceKey.create(
-            Registries.PLACED_FEATURE, MCplusplus.id("ore_tin")
-    );
-    public static final ResourceKey<PlacedFeature> ORE_LEAD = ResourceKey.create(
-            Registries.PLACED_FEATURE, MCplusplus.id("ore_lead")
-    );
-    public static final ResourceKey<PlacedFeature> ORE_HOT_OBSIDIAN = ResourceKey.create(
-            Registries.PLACED_FEATURE, MCplusplus.id("ore_hot_obsidian")
-    );
-    public static final ResourceKey<PlacedFeature> ORE_VOIDIUM = ResourceKey.create(
-            Registries.PLACED_FEATURE, MCplusplus.id("ore_voidium")
-    );
-    public static final ResourceKey<PlacedFeature> ORE_DEPLETED_VOIDIUM = ResourceKey.create(
-            Registries.PLACED_FEATURE, MCplusplus.id("ore_depleted_voidium")
-    );
+    public static final ResourceKey<PlacedFeature> ORE_TIN =  createKey("ore_tin");
+    public static final ResourceKey<PlacedFeature> ORE_LEAD = createKey("ore_lead");
+    public static final ResourceKey<PlacedFeature> ORE_HOT_OBSIDIAN = createKey("ore_hot_obsidian");
+    public static final ResourceKey<PlacedFeature> ORE_VOIDIUM = createKey("ore_voidium");
+    public static final ResourceKey<PlacedFeature> ORE_DEPLETED_VOIDIUM = createKey("ore_depleted_voidium");
+    public static ResourceKey<PlacedFeature> createKey(final String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, MCplusplus.id(name));
+    }
+
 
     private static List<PlacementModifier> orePlacement(final PlacementModifier frequencyModifier, final PlacementModifier heightRange) {
         return List.of(frequencyModifier, InSquarePlacement.spread(), heightRange, BiomeFilter.biome());
@@ -43,12 +37,12 @@ public class ModOrePlacements {
     }
 
     public static void bootstrap(final BootstrapContext<PlacedFeature> context) {
-        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        Holder<ConfiguredFeature<?, ?>> oreTin = configuredFeatures.getOrThrow(ModOreFeatures.ORE_TIN);
-        Holder<ConfiguredFeature<?, ?>> oreLead = configuredFeatures.getOrThrow(ModOreFeatures.ORE_LEAD);
-        Holder<ConfiguredFeature<?, ?>> oreHotObsidian = configuredFeatures.getOrThrow(ModOreFeatures.ORE_HOT_OBSIDIAN);
-        Holder<ConfiguredFeature<?, ?>> oreVoidium = configuredFeatures.getOrThrow(ModOreFeatures.ORE_VOIDIUM);
-        Holder<ConfiguredFeature<?, ?>> oreDepletedVoidium = configuredFeatures.getOrThrow(ModOreFeatures.ORE_DEPLETED_VOIDIUM);
+        HolderGetter<Feature> configuredFeatures = context.lookup(Registries.FEATURE);
+        Holder<Feature> oreTin = configuredFeatures.getOrThrow(ModOreFeatures.ORE_TIN);
+        Holder<Feature> oreLead = configuredFeatures.getOrThrow(ModOreFeatures.ORE_LEAD);
+        Holder<Feature> oreHotObsidian = configuredFeatures.getOrThrow(ModOreFeatures.ORE_HOT_OBSIDIAN);
+        Holder<Feature> oreVoidium = configuredFeatures.getOrThrow(ModOreFeatures.ORE_VOIDIUM);
+        Holder<Feature> oreDepletedVoidium = configuredFeatures.getOrThrow(ModOreFeatures.ORE_DEPLETED_VOIDIUM);
 
         PlacementUtils.register(
                 context, ORE_TIN, oreTin, commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(112)))

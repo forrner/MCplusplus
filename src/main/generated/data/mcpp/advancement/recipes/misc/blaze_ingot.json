@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:blaze_ingot"
+        "recipes": "mcpp:blaze_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

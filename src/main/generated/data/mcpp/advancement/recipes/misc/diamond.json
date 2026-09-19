@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:diamond"
+        "recipes": "mcpp:diamond"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

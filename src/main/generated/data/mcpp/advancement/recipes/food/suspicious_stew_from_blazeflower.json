@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:suspicious_stew_from_blazeflower"
+        "recipes": "mcpp:suspicious_stew_from_blazeflower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

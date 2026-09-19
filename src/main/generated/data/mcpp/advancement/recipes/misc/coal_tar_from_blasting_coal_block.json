@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:coal_tar_from_blasting_coal_block"
+        "recipes": "mcpp:coal_tar_from_blasting_coal_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

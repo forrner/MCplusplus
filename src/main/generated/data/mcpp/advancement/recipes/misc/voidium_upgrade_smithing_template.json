@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:voidium_upgrade_smithing_template"
+        "recipes": "mcpp:voidium_upgrade_smithing_template"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

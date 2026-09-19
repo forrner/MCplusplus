@@ -10,21 +10,13 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class Blazeflower extends FlowerBlock  {
-    public static final MapCodec<Blazeflower> CODEC = simpleCodec(Blazeflower::new);
 
     public Blazeflower(BlockBehaviour.Properties properties) {
         super(MobEffects.FIRE_RESISTANCE, 5.0F, properties);
     }
 
     @Override
-    public MapCodec<Blazeflower> codec() {
-        return CODEC;
-    }
-
-
-    @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
         return state.is(Blocks.SOUL_SOIL);
     }
-
 }

@@ -1,17 +1,17 @@
-// 26.2	-999999999-01-01T00:00:00	MCplusplus/Block Loot Tables
-846e52867e938e15c5c39dcfbeb77f60dcdec392 data/mcpp/loot_table/blocks/blaze_torch.json
-e246e0099d93dec1cac3b3152dcbfe1e44c7a097 data/mcpp/loot_table/blocks/blazeflower.json
-f2365e4d17542f72145ecdfb151c7f986b54df4c data/mcpp/loot_table/blocks/blazeflower_crop.json
-a737397f07b9eef8301b6e4c2fe7f85a9b2d9ae0 data/mcpp/loot_table/blocks/deepslate_lead_ore.json
-5a8067f39c575df1c43c75c78fc028ff39ec54a1 data/mcpp/loot_table/blocks/deepslate_tin_ore.json
-76f9d5091533d6f17eee27547f59cdc3b1568fdb data/mcpp/loot_table/blocks/depleted_voidium_ore.json
-897096a8f303c51edc7ffdd790c12754cbd5d05f data/mcpp/loot_table/blocks/hot_obsidian.json
-934a10f5b127e2435ae6b0101bd840c0b59ebfac data/mcpp/loot_table/blocks/lead_ore.json
-9eca36f83e3a6f85ac16cf9247ded21801b6eaa2 data/mcpp/loot_table/blocks/potted_blazeflower.json
-c9e31798a7999ca45fc41a0c366ec5bf04550021 data/mcpp/loot_table/blocks/strawberry_crop.json
-af6c8cf61256363fdcf3064b0c39d7f75bc42129 data/mcpp/loot_table/blocks/tin_block.json
-23ec77acbf6d9a9f87eaef26f24801555227773f data/mcpp/loot_table/blocks/tin_ore.json
-7a2d313bd80f54c795bd79fb9f263c45909a9c31 data/mcpp/loot_table/blocks/tin_slab.json
-232069c27ef0d0a818c568d56158dbba56a70b57 data/mcpp/loot_table/blocks/tin_stairs.json
-addd097d68389d58c133bded5a78c3343b49ed39 data/mcpp/loot_table/blocks/voidium_ore.json
-3ae9612baaf021afdf9d791d7586fcbcefed7fd2 data/mcpp/loot_table/blocks/voidium_torch.json
+// 26.3	-999999999-01-01T00:00:00	MCplusplus/Block Loot Tables
+f6352dc5c24044695d086dfc95a34556e6e235d6 data/mcpp/loot_table/blocks/blaze_torch.json
+bd02f75f6cf756cf81b0dbc31ef1dcf2868f2b06 data/mcpp/loot_table/blocks/blazeflower.json
+4fa5af97d88fde6a8da584592e2465d0434bcdb8 data/mcpp/loot_table/blocks/blazeflower_crop.json
+b192dc15022c1b464e3332d33f997fe223760de4 data/mcpp/loot_table/blocks/deepslate_lead_ore.json
+c80f774befc571a065235bc365f12c995f4f8785 data/mcpp/loot_table/blocks/deepslate_tin_ore.json
+902e5e006a1af1e1c1bbb910871b864446af088e data/mcpp/loot_table/blocks/depleted_voidium_ore.json
+02de8514865db5a09e24305b302683133a8fca9f data/mcpp/loot_table/blocks/hot_obsidian.json
+9a116dccb61d24e3c90d597dfedc3d49796e1416 data/mcpp/loot_table/blocks/lead_ore.json
+148f81a8fe4e21cf8dbd05e92200bf96d98272d8 data/mcpp/loot_table/blocks/potted_blazeflower.json
+b32b7f5d3c42e6d51c8bf3c0a6baa5f340f90f91 data/mcpp/loot_table/blocks/strawberry_crop.json
+9b82da2cc63da7d1d57b5b9cd8f33480e6c8f2eb data/mcpp/loot_table/blocks/tin_block.json
+936ecdb8d635856aa2fa04a50651a73b066b947f data/mcpp/loot_table/blocks/tin_ore.json
+b5e08f7d1b7de865b1be3c27327001aabbd80cd0 data/mcpp/loot_table/blocks/tin_slab.json
+4204eb491e19372926545a97f4f1d0e9595f25d4 data/mcpp/loot_table/blocks/tin_stairs.json
+15ff3aca91b8938aedef26feefdae779b602dc03 data/mcpp/loot_table/blocks/voidium_ore.json
+fa23ed6933d93d202586ab3f240c0291c628941e data/mcpp/loot_table/blocks/voidium_torch.json

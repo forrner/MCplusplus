@@ -1,4 +1,4 @@
-// 26.2	-999999999-01-01T00:00:00	MCplusplus/Tags for minecraft:block
+// 26.3	-999999999-01-01T00:00:00	MCplusplus/Tags for minecraft:block
 9994f212884e8264af96eaba34aa7e89696d8994 data/mcpp/tags/block/base_stone_end.json
 aa6c657a357a6c58a7d77a7c4e88b70c91cb9967 data/mcpp/tags/block/needs_blaze_tool.json
 83906f26d27c33cd83605831497c4d6a857d8661 data/mcpp/tags/block/needs_netherite_tool.json

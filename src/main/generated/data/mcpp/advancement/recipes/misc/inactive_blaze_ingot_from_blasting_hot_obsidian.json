@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:inactive_blaze_ingot_from_blasting_hot_obsidian"
+        "recipes": "mcpp:inactive_blaze_ingot_from_blasting_hot_obsidian"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

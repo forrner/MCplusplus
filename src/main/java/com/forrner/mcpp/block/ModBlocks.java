@@ -22,7 +22,6 @@ import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.world.level.block.piston.PistonBaseBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.SolidDebugger;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -159,30 +158,18 @@ public class ModBlocks {
         return blockState -> blockState.getValue(BlockStateProperties.WATERLOGGED) ? MapColor.WATER : mapColor;
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static Boolean never(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return false;
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static Boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return true;
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static Boolean ocelotOrParrot(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos, final EntityType<?> entityType) {
         return entityType == EntityTypes.OCELOT || entityType == EntityTypes.PARROT;
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static BlockBehaviour.Properties logProperties(final MapColor topColor, final MapColor sideColor, final SoundType soundType) {
         return BlockBehaviour.Properties.of()
                 .mapColor(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topColor : sideColor)
@@ -192,23 +179,14 @@ public class ModBlocks {
                 .ignitedByLava();
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static BlockBehaviour.Properties netherStemProperties(final MapColor mapColor) {
         return BlockBehaviour.Properties.of().mapColor(state -> mapColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.STEM);
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static boolean always(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return true;
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static boolean never(final BlockState state, final BlockGetter blockGetter, final BlockPos blockPos) {
         return false;
     }
@@ -221,9 +199,6 @@ public class ModBlocks {
         return blockPos.above();
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
     public static BlockBehaviour.Properties leavesProperties(final SoundType soundType) {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
@@ -258,16 +233,12 @@ public class ModBlocks {
                 .pushReaction(PushReaction.IMMOVEABLE);
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
+
     public static BlockBehaviour.Properties buttonProperties() {
         return BlockBehaviour.Properties.of().noCollision().strength(0.5F).pushReaction(PushReaction.POPPED);
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
+
     public static BlockBehaviour.Properties flowerPotProperties() {
         return BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.POPPED);
     }
@@ -325,9 +296,7 @@ public class ModBlocks {
         return register(id.block(), factory, properties);
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
+
     public static Block register(final ResourceKey<Block> id, final Function<BlockBehaviour.Properties, Block> factory, final BlockBehaviour.Properties properties) {
         Block block = factory.apply(properties.setId(id));
         return Registry.register(BuiltInRegistries.BLOCK, id, block);
@@ -337,23 +306,11 @@ public class ModBlocks {
         return register(id.block(), properties);
     }
 
-    /**
-     * Access widened by fabric-transitive-access-wideners-v1 to accessible
-     */
+
     public static Block register(final ResourceKey<Block> id, final BlockBehaviour.Properties properties) {
         return register(id, Block::new, properties);
     }
 
-    static {
-        SolidDebugger.runAndDump(() -> {
-            for (Block block : BuiltInRegistries.BLOCK) {
-                for (BlockState state : block.getStateDefinition().getPossibleStates()) {
-                    Block.BLOCK_STATE_REGISTRY.add(state);
-                    state.initCache();
-                }
-            }
-        });
-    }
     public static void register(){
 
     }

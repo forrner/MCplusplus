@@ -5,10 +5,8 @@ import com.forrner.mcpp.block.ModBlocks;
 import com.forrner.mcpp.item.ModItems;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -103,7 +101,7 @@ public class ModLootTableModifications{
                                 .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(1))))
                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                         //pool有chance的概率生效，若生效会等概率抽取pool中物品之一，抢夺等级+1，chance+0.01
-                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(Enchantments.FIRE_ASPECT), 0.01F, 0.01F));
+                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(provider.lookupOrThrow(Registries.ENCHANTMENT), 0.01F, 0.01F));
                 builder.pool(poolBuilder.build());
             }
         });

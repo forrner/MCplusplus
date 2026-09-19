@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:blaze_torch"
+        "recipes": "mcpp:blaze_torch"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

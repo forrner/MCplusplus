@@ -2,7 +2,6 @@ package com.forrner.mcpp.block.custom;
 
 import com.forrner.mcpp.block.ModBlocks;
 import com.forrner.mcpp.item.ModItems;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -11,6 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,15 +21,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BlazeflowerCrop extends CropBlock {
-    public static final MapCodec<BlazeflowerCrop> CODEC = simpleCodec(BlazeflowerCrop::new);
     public static final int MAX_AGE = 1;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
     private static final VoxelShape[] SHAPES = Block.boxes(1, age -> Block.column(6.0, 0.0, 6 + age * 4));
-
-    @Override
-    public MapCodec<BlazeflowerCrop> codec() {
-        return CODEC;
-    }
 
     public BlazeflowerCrop(BlockBehaviour.Properties properties) {
         super(properties);
@@ -98,7 +92,7 @@ public class BlazeflowerCrop extends CropBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+    public boolean isValidBonemealTarget(final LevelReader level, final BlockPos pos, final BlockState state, final BonemealSource source) {
         return false;
     }
 }

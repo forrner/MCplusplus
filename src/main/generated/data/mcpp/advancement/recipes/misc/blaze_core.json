@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:blaze_core"
+        "recipes": "mcpp:blaze_core"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:blaze_sword_smithing"
+        "recipes": "mcpp:blaze_sword_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

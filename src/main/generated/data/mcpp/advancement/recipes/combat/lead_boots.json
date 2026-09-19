@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:lead_boots"
+        "recipes": "mcpp:lead_boots"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

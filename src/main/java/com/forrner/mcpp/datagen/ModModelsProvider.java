@@ -3,7 +3,6 @@ package com.forrner.mcpp.datagen;
 import com.forrner.mcpp.block.ModBlocks;
 import com.forrner.mcpp.block.custom.StrawberryCrop;
 import com.forrner.mcpp.item.ModItems;
-import com.forrner.mcpp.item.equipment.ModEquipmentAssets;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -11,7 +10,7 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import static net.minecraft.client.data.models.ItemModelGenerators.*;
+import java.util.Map;
 
 public class ModModelsProvider extends FabricModelProvider {
     public ModModelsProvider(FabricPackOutput output) {
@@ -62,18 +61,27 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.LUMEN_FEATHER, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.UMBRA_FEATHER, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerators.generateTrimmableItem(ModItems.LEAD_HELMET, ModEquipmentAssets.LEAD, TRIM_PREFIX_HELMET, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.LEAD_CHESTPLATE, ModEquipmentAssets.LEAD, TRIM_PREFIX_CHESTPLATE, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.LEAD_LEGGINGS, ModEquipmentAssets.LEAD, TRIM_PREFIX_LEGGINGS, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.LEAD_BOOTS, ModEquipmentAssets.LEAD, TRIM_PREFIX_BOOTS, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BLAZE_HELMET, ModEquipmentAssets.BLAZE, TRIM_PREFIX_HELMET, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BLAZE_CHESTPLATE, ModEquipmentAssets.BLAZE, TRIM_PREFIX_CHESTPLATE, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BLAZE_LEGGINGS, ModEquipmentAssets.BLAZE, TRIM_PREFIX_LEGGINGS, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BLAZE_BOOTS, ModEquipmentAssets.BLAZE, TRIM_PREFIX_BOOTS, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.VOIDIUM_HELMET, ModEquipmentAssets.VOIDIUM, TRIM_PREFIX_HELMET, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.VOIDIUM_CHESTPLATE, ModEquipmentAssets.VOIDIUM, TRIM_PREFIX_CHESTPLATE, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.VOIDIUM_LEGGINGS, ModEquipmentAssets.VOIDIUM, TRIM_PREFIX_LEGGINGS, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.VOIDIUM_BOOTS, ModEquipmentAssets.VOIDIUM, TRIM_PREFIX_BOOTS, false);
+        itemModelGenerators.generateTrimmableArmorSet(
+                 ModItems.LEAD_HELMET,
+                ModItems.LEAD_CHESTPLATE,
+                ModItems.LEAD_LEGGINGS,
+                ModItems.LEAD_BOOTS,
+                false,
+                Map.of());
+        itemModelGenerators.generateTrimmableArmorSet(
+                ModItems.BLAZE_HELMET,
+                ModItems.BLAZE_CHESTPLATE,
+                ModItems.BLAZE_LEGGINGS,
+                ModItems.BLAZE_BOOTS,
+                false,
+                Map.of());
+        itemModelGenerators.generateTrimmableArmorSet(
+                ModItems.VOIDIUM_HELMET,
+                ModItems.VOIDIUM_CHESTPLATE,
+                ModItems.VOIDIUM_LEGGINGS,
+                ModItems.VOIDIUM_BOOTS,
+                false,
+                Map.of());
 
         itemModelGenerators.generateFlatItem(ModItems.LEAD_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.LEAD_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);

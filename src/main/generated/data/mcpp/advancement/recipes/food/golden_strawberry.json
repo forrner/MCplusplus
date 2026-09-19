@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:golden_strawberry"
+        "recipes": "mcpp:golden_strawberry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

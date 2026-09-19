@@ -63,7 +63,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:diamond_from_blasting"
+        "recipes": "mcpp:diamond_from_blasting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

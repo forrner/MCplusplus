@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:sugar"
+        "recipes": "mcpp:sugar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:voidium_chestplate_smithing"
+        "recipes": "mcpp:voidium_chestplate_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

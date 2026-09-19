@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:voidium_helmet_smithing"
+        "recipes": "mcpp:voidium_helmet_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:lead_leggings"
+        "recipes": "mcpp:lead_leggings"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

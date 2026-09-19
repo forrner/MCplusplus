@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mcpp:tin_ingot_from_smelting_tin_ore"
+        "recipes": "mcpp:tin_ingot_from_smelting_tin_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
