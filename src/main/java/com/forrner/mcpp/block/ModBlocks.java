@@ -3,6 +3,7 @@ package com.forrner.mcpp.block;
 import com.forrner.mcpp.MCplusplus;
 import com.forrner.mcpp.block.custom.Blazeflower;
 import com.forrner.mcpp.block.custom.BlazeflowerCrop;
+import com.forrner.mcpp.block.custom.ReedBlock;
 import com.forrner.mcpp.block.custom.StrawberryCrop;
 import com.forrner.mcpp.particle.ModParticleTypes;
 import net.minecraft.core.BlockPos;
@@ -89,6 +90,17 @@ public class ModBlocks {
                     .randomTicks()
                     .instabreak()
                     .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+    );
+
+    public static final Block REED = register(
+            "reed",
+            ReedBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollision()
+                    .strength(0.1F)
+                    .sound(SoundType.GRASS)
                     .pushReaction(PushReaction.DESTROY)
     );
 

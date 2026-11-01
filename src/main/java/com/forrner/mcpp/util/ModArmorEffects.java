@@ -51,7 +51,6 @@ public class ModArmorEffects {
     }
 
     public static void register(){
-        MCplusplus.LOGGER.info("Registering ModArmorEffects for "+MCplusplus.MOD_ID);
         ServerTickEvents.END_LEVEL_TICK.register(serverLevel -> {
             for(Player player : serverLevel.players()){
                 tickPlayer(player);

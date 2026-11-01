@@ -8,6 +8,7 @@ d63612d9aec2cc1681df556cc4b9df5c6cf2cb10 data/mcpp/loot_table/blocks/depleted_vo
 51a1613c33157715237c7d52d0fde57ec3087b04 data/mcpp/loot_table/blocks/hot_obsidian.json
 896a06525abd2bab167668f65768575197ce8060 data/mcpp/loot_table/blocks/lead_ore.json
 6206f144dd27c239c425c369833edc38ecf7f501 data/mcpp/loot_table/blocks/potted_blazeflower.json
+3b0d895a2a0d25cb36291fdd869c92af1302e93e data/mcpp/loot_table/blocks/reed.json
 483ff8b83bba5d57029ef15de6b7c91fadd88669 data/mcpp/loot_table/blocks/strawberry_crop.json
 d5995007141151cb4576a27eac95beaa515a6da0 data/mcpp/loot_table/blocks/tin_block.json
 22a59ff1f513e77c968e449b21ff0232277e6ad1 data/mcpp/loot_table/blocks/tin_ore.json

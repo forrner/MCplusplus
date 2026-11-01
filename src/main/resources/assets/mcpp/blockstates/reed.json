@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "part=lower,waterlogged=false":  { "model": "mcpp:block/reed_bottom" },
+    "part=lower,waterlogged=true":   { "model": "mcpp:block/reed_bottom" },
+    "part=middle,waterlogged=false": { "model": "mcpp:block/reed_middle" },
+    "part=middle,waterlogged=true":  { "model": "mcpp:block/reed_middle" },
+    "part=upper,waterlogged=false":  { "model": "mcpp:block/reed_top" },
+    "part=upper,waterlogged=true":   { "model": "mcpp:block/reed_top" }
+  }
+}

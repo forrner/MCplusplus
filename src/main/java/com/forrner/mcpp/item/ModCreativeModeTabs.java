@@ -80,6 +80,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.TIN_BLOCK);
                 output.accept(ModItems.TIN_STAIRS);
                 output.accept(ModItems.TIN_SLAB);
+                output.accept(ModItems.REED);
                 output.accept(ModItems.HOT_OBSIDIAN);
                 output.accept(ModItems.BLAZEFLOWER);
                 output.accept(ModItems.BLAZE_TORCH);

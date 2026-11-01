@@ -8,6 +8,7 @@ import com.forrner.mcpp.item.custom.ModSmithingTemplateItem;
 import com.forrner.mcpp.item.equipment.ModArmorMaterials;
 import com.forrner.mcpp.item.equipment.ModEquipmentAssets;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.registry.CompostableRegistry;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -38,6 +39,7 @@ public class ModItems {
     public static final Item TIN_BLOCK = registerBlock(ModBlocks.TIN_BLOCK);
     public static final Item TIN_STAIRS = registerBlock(ModBlocks.TIN_STAIRS);
     public static final Item TIN_SLAB = registerBlock(ModBlocks.TIN_SLAB);
+    public static final Item REED = registerBlock(ModBlocks.REED, DoubleHighBlockItem::new);
     public static final Item HOT_OBSIDIAN = registerBlock(ModBlocks.HOT_OBSIDIAN);
     public static final Item BLAZEFLOWER = registerBlock(ModBlocks.BLAZEFLOWER);
     public static final Item BLAZE_TORCH = registerBlock(
@@ -227,6 +229,10 @@ public class ModItems {
             builder.add(ModItems.COAL_TAR, 18000);
         });
 
+        CompostableRegistry.INSTANCE.add(ModItems.STRAWBERRY_SEEDS, 0.3F);
+        CompostableRegistry.INSTANCE.add(ModItems.STRAWBERRY, 0.5F);
+        CompostableRegistry.INSTANCE.add(ModItems.REED, 0.5F);
+
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register(FabricCreativeModeTabOutput->{
                     FabricCreativeModeTabOutput.accept(DIAMOND_NUGGET);
@@ -253,6 +259,7 @@ public class ModItems {
                     FabricCreativeModeTabOutput.accept(DEEPSLATE_TIN_ORE);
                     FabricCreativeModeTabOutput.accept(LEAD_ORE);
                     FabricCreativeModeTabOutput.accept(DEEPSLATE_LEAD_ORE);
+                    FabricCreativeModeTabOutput.accept(REED);
                     FabricCreativeModeTabOutput.accept(HOT_OBSIDIAN);
                     FabricCreativeModeTabOutput.accept(STRAWBERRY_SEEDS);
                     FabricCreativeModeTabOutput.accept(BLAZEFLOWER_SEEDS);

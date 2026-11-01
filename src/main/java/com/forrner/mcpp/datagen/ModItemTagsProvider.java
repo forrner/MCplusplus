@@ -131,6 +131,5 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModItems.VOIDIUM_CHESTPLATE)
                 .add(ModItems.VOIDIUM_LEGGINGS)
                 .add(ModItems.VOIDIUM_BOOTS);
-
     }
 }

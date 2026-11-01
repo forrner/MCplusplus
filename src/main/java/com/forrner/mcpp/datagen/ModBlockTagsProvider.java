@@ -29,7 +29,11 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.VOIDIUM_ORE)
                 .add(ModBlocks.DEPLETED_VOIDIUM_ORE);
 
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.REED);
 
+        valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
+                .add(ModBlocks.REED);
 
         valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.TIN_ORE)
@@ -90,5 +94,17 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         valueLookupBuilder(ModBlockTags.BASE_STONE_END)
                 .add(Blocks.END_STONE);
+
+        valueLookupBuilder(ModBlockTags.CAN_SUSTAIN_REED)
+                .add(Blocks.CLAY)
+                .add(Blocks.MOSS_BLOCK)
+                .add(Blocks.GRASS_BLOCK)
+                .add(Blocks.DIRT)
+                .add(Blocks.ROOTED_DIRT)
+                .add(Blocks.COARSE_DIRT)
+                .add(Blocks.MUD)
+                .add(Blocks.MUDDY_MANGROVE_ROOTS)
+                .add(Blocks.SAND)
+                .add(Blocks.GRAVEL);
     }
 }
