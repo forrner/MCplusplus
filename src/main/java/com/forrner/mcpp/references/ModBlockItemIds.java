@@ -11,6 +11,7 @@ public class ModBlockItemIds {
     public static final BlockItemId TIN_BLOCK = ModBlockItemId.create("tin_block");
     public static final BlockItemId TIN_STAIRS = ModBlockItemId.create("tin_stairs");
     public static final BlockItemId TIN_SLAB = ModBlockItemId.create("tin_slab");
+    public static final BlockItemId REED = ModBlockItemId.create("reed");
     public static final BlockItemId STRAWBERRY_CROP = ModBlockItemId.create("strawberry_crop", "strawberry_seeds");
     public static final BlockItemId BLAZEFLOWER = ModBlockItemId.create("blazeflower");
     public static final BlockItemId BLAZEFLOWER_CROP = ModBlockItemId.create("blazeflower_crop", "blazeflower_seeds");

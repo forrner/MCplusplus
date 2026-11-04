@@ -1,0 +1,10 @@
+{
+  "type": "mcpp:reed_patch",
+  "config": {
+    "max_radius": 4,
+    "max_spacing": 4,
+    "reed_count": 40,
+    "search_radius": 6,
+    "vertical_range": 3
+  }
+}

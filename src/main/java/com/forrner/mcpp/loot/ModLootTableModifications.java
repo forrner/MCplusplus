@@ -1,6 +1,5 @@
 package com.forrner.mcpp.loot;
 
-import com.forrner.mcpp.MCplusplus;
 import com.forrner.mcpp.block.ModBlocks;
 import com.forrner.mcpp.item.ModItems;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
@@ -27,6 +26,11 @@ public class ModLootTableModifications {
             BuiltInLootTables.SIMPLE_DUNGEON,
             BuiltInLootTables.VILLAGE_PLAINS_HOUSE,
             BuiltInLootTables.VILLAGE_SAVANNA_HOUSE
+    );
+
+    private static final List<ResourceKey<LootTable>> GOLDEN_STRAWBERRY_TARGET_CHESTS = List.of(
+            BuiltInLootTables.ABANDONED_MINESHAFT,
+            BuiltInLootTables.SIMPLE_DUNGEON
     );
 
     private static final List<ResourceKey<LootTable>> BLAZEFLOWER_SEEDS_TARGET_CHESTS_SMALL = List.of(
@@ -57,7 +61,8 @@ public class ModLootTableModifications {
     );
 
     private static final List<ResourceKey<LootTable>> BLAZE_SHARD_TARGET_CHESTS = List.of(
-            BuiltInLootTables.NETHER_BRIDGE
+            BuiltInLootTables.NETHER_BRIDGE,
+            BuiltInLootTables.RUINED_PORTAL
     );
 
     public static final List<ResourceKey<LootTable>> VOIDIUM_TARGET_CHESTS = List.of(
@@ -81,7 +86,6 @@ public class ModLootTableModifications {
 
 
     public static void register() {
-        MCplusplus.LOGGER.info("Registering loot tables for "+MCplusplus.MOD_ID);
 
         //strawberry seeds
         LootTableEvents.MODIFY.register((id, builder, source, provider) -> {
@@ -103,6 +107,18 @@ public class ModLootTableModifications {
                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                         //pool有chance的概率生效，若生效会等概率抽取pool中物品之一，抢夺等级+1，chance+0.01
                         .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(provider, 0.01F, 0.01F));
+                builder.pool(poolBuilder.build());
+            }
+        });
+
+        //golden strawberry
+        LootTableEvents.MODIFY.register((id, builder, source, provider) -> {
+            if (source.isBuiltin() && GOLDEN_STRAWBERRY_TARGET_CHESTS.contains(id)) {
+                LootPool.Builder poolBuilder = LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ModItems.GOLDEN_STRAWBERRY).setWeight(1)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                        .add(EmptyLootItem.emptyItem().setWeight(3));
                 builder.pool(poolBuilder.build());
             }
         });

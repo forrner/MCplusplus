@@ -28,8 +28,6 @@ public class MCplusplus implements ModInitializer {
 		ModArmorEffects.register();
 		ModElytra.register();
 		ModEvents.register();
-
-		LOGGER.info(MOD_ID + " has been loaded!");
 	}
 
 	public static Identifier id(String path) {

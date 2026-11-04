@@ -133,6 +133,10 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                         .unlockedBy("has_diamond_nautilus_armor", this.has(Items.DIAMOND_NAUTILUS_ARMOR))
                         .save(recipeOutput, getBlastingRecipeName(Items.DIAMOND));
 
+                shapeless(RecipeCategory.MISC, Items.DYE.lime(),1)
+                        .requires(ModItems.REED)
+                        .unlockedBy("has_reed", has(ModItems.REED))
+                        .save(recipeOutput);
 
                 shapeless(RecipeCategory.MISC, ModItems.BLAZE_INGOT,1)
                         .requires(ModItems.INACTIVE_BLAZE_INGOT)

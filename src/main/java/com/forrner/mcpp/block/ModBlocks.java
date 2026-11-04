@@ -2,6 +2,7 @@ package com.forrner.mcpp.block;
 
 import com.forrner.mcpp.block.custom.Blazeflower;
 import com.forrner.mcpp.block.custom.BlazeflowerCrop;
+import com.forrner.mcpp.block.custom.ReedBlock;
 import com.forrner.mcpp.block.custom.StrawberryCrop;
 import com.forrner.mcpp.particle.ModParticleTypes;
 import com.forrner.mcpp.references.ModBlockIds;
@@ -79,6 +80,17 @@ public class ModBlocks {
 
     public static final Block TIN_STAIRS = registerStair(ModBlockItemIds.TIN_STAIRS, TIN_BLOCK);
     public static final Block TIN_SLAB = registerSlab(ModBlockItemIds.TIN_SLAB, TIN_BLOCK);
+
+    public static final Block REED = register(
+            ModBlockItemIds.REED,
+            ReedBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollision()
+                    .strength(0.1F)
+                    .sound(SoundType.GRASS)
+                    .pushReaction(PushReaction.DESTROY)
+    );
 
     public static final Block STRAWBERRY_CROP = register(
             ModBlockItemIds.STRAWBERRY_CROP, StrawberryCrop::new,

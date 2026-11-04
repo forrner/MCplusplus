@@ -41,6 +41,7 @@ d67422fcdf03a1f893c439450694bc228d31dca1 data/mcpp/advancement/recipes/misc/lead
 a07f4b76b1a1f333fa0af5ce599201b3763ef03b data/mcpp/advancement/recipes/misc/lead_ingot_from_smelting_deepslate_lead_ore.json
 22a12518c949d3fb4acafc07d50c56d08964b095 data/mcpp/advancement/recipes/misc/lead_ingot_from_smelting_lead_ore.json
 0da81006d5c2f267fc068e924841b17bcd4af6e8 data/mcpp/advancement/recipes/misc/lead_ingot_from_smelting_raw_lead.json
+b867d055b88a330193b0976a8dbae185a563f3e1 data/mcpp/advancement/recipes/misc/lime_dye.json
 6c4abc016e4e9c7b18fda502ba72cad70833dca5 data/mcpp/advancement/recipes/misc/sugar.json
 d29d22e9ca5ddfe4275a0aca655ef45b59ca8b09 data/mcpp/advancement/recipes/misc/tin_block.json
 282d3ddd79764aee080fb5845b46c18f248018d1 data/mcpp/advancement/recipes/misc/tin_ingot.json
@@ -103,6 +104,7 @@ b0a4b404421bdc2de08846bfbf704c5b7671635d data/mcpp/recipe/lead_helmet.json
 238a836eb2eb4867a48ecd503c1119b98e5d4363 data/mcpp/recipe/lead_shovel.json
 4278fe73c3f1b79e742e854568244b5c8a2da102 data/mcpp/recipe/lead_spear.json
 f963cf2205f6f3da97f6961d2ed2bff9d96ef0af data/mcpp/recipe/lead_sword.json
+c8d16724040e7a726f078808b4cf783452938cbc data/mcpp/recipe/lime_dye.json
 c6c7b08f98ad49e042f9de9cfeb9cde00c340b5a data/mcpp/recipe/lumen_elytra.json
 d44a6b501225caab97856c92c6f10f8d5325c5d8 data/mcpp/recipe/sugar.json
 e07f09261dd8941ddd38c04dae7611426eaa413a data/mcpp/recipe/suspicious_stew_from_blazeflower.json

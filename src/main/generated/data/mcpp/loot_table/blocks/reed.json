@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "mcpp:reed",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "part": "lower"
+              }
+            }
+          ],
+          "name": "mcpp:reed"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
