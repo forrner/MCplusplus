@@ -30,7 +30,11 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlockItemIds.VOIDIUM_ORE)
                 .add(ModBlockItemIds.DEPLETED_VOIDIUM_ORE);
 
+        builder(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlockItemIds.REED);
 
+        builder(BlockTags.SWORD_EFFICIENT)
+                .add(ModBlockItemIds.REED);
 
         builder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlockItemIds.TIN_ORE)
@@ -82,6 +86,11 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .addTag(ModBlockTags.NEEDS_BLAZE_TOOL);
 
 
+        builder(BlockTags.WASHED_AWAY_BY_FLUIDS)
+                .add(ModBlockItemIds.BLAZE_TORCH)
+                .add(ModBlockIds.WALL_BLAZE_TORCH)
+                .add(ModBlockItemIds.VOIDIUM_TORCH)
+                .add(ModBlockIds.WALL_VOIDIUM_TORCH);
 
         builder(BlockTags.SMALL_FLOWERS)
                 .add(ModBlockItemIds.BLAZEFLOWER);
@@ -91,5 +100,17 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         builder(ModBlockTags.BASE_STONE_END)
                 .add(BlockItemIds.END_STONE);
+
+        builder(ModBlockTags.CAN_SUSTAIN_REED)
+                .add(BlockItemIds.CLAY)
+                .add(BlockItemIds.MOSS_BLOCK)
+                .add(BlockItemIds.GRASS_BLOCK)
+                .add(BlockItemIds.DIRT)
+                .add(BlockItemIds.ROOTED_DIRT)
+                .add(BlockItemIds.COARSE_DIRT)
+                .add(BlockItemIds.MUD)
+                .add(BlockItemIds.MUDDY_MANGROVE_ROOTS)
+                .add(BlockItemIds.SAND)
+                .add(BlockItemIds.GRAVEL);
     }
 }

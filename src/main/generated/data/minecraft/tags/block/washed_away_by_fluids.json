@@ -1,0 +1,8 @@
+{
+  "values": [
+    "mcpp:blaze_torch",
+    "mcpp:wall_blaze_torch",
+    "mcpp:voidium_torch",
+    "mcpp:wall_voidium_torch"
+  ]
+}

@@ -41,10 +41,10 @@ public class ModRecipesProvider extends FabricRecipeProvider {
             @Override
             public void buildRecipes() {
                 oreSmelting(TIN_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TIN_INGOT, 0.7F, 200, "tin_ingot");
-                oreBlasting(TIN_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TIN_INGOT, 0.7F, 100, "tin_ingot");
+                oreBlasting(TIN_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TIN_INGOT, 0.7F, 200, "tin_ingot");
                 oreSmelting(LEAD_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.LEAD_INGOT, 0.8F, 200, "lead_ingot");
-                oreBlasting(LEAD_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.LEAD_INGOT, 0.8F, 100, "lead_ingot");
-                oreBlasting(COAL_TAR_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.COAL_TAR, 1.0F, 400, "coal_tar");
+                oreBlasting(LEAD_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.LEAD_INGOT, 0.8F, 200, "lead_ingot");
+                oreBlasting(COAL_TAR_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.COAL_TAR, 1.0F, 1600, "coal_tar");
                 oreBlasting(INACTIVE_BLAZE_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.INACTIVE_BLAZE_INGOT, 3.0F, 300, "inactive_blaze_ingot");
 
                 stairBuilder(ModBlocks.TIN_STAIRS, Ingredient.of(ModBlocks.TIN_BLOCK))
@@ -135,6 +135,10 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                         .unlockedBy("has_diamond_nautilus_armor", this.has(Items.DIAMOND_NAUTILUS_ARMOR))
                         .save(output, getBlastingRecipeName(Items.DIAMOND));
 
+                shapeless(RecipeCategory.MISC, Items.DYE.lime(),1)
+                        .requires(ModItems.REED)
+                        .unlockedBy("has_reed", has(ModItems.REED))
+                        .save(output);
 
                 shapeless(RecipeCategory.MISC, ModItems.BLAZE_INGOT, 1)
                         .requires(ModItems.INACTIVE_BLAZE_INGOT)

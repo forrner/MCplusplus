@@ -3,6 +3,8 @@ package com.forrner.mcpp;
 import com.forrner.mcpp.datagen.*;
 import com.forrner.mcpp.world.ModOreFeatures;
 import com.forrner.mcpp.world.ModOrePlacements;
+import com.forrner.mcpp.world.ModVegetationFeatures;
+import com.forrner.mcpp.world.ModVegetationPlacements;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
@@ -26,5 +28,7 @@ public class MCplusplusDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.FEATURE, ModOreFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, ModOrePlacements::bootstrap);
+		registryBuilder.add(Registries.FEATURE, ModVegetationFeatures::bootstrap);
+		registryBuilder.add(Registries.PLACED_FEATURE, ModVegetationPlacements::bootstrap);
 	}
 }

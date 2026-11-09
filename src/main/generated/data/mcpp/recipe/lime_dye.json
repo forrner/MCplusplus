@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "mcpp:reed"
+  ],
+  "result": {
+    "id": "minecraft:lime_dye"
+  }
+}

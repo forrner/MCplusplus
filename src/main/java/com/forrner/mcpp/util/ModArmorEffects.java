@@ -1,6 +1,5 @@
 package com.forrner.mcpp.util;
 
-import com.forrner.mcpp.MCplusplus;
 import com.forrner.mcpp.tag.ModItemTags;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.core.Holder;
@@ -51,7 +50,6 @@ public class ModArmorEffects {
     }
 
     public static void register(){
-        MCplusplus.LOGGER.info("Registering ModArmorEffects for "+MCplusplus.MOD_ID);
         ServerTickEvents.END_LEVEL_TICK.register(serverLevel -> {
             for(Player player : serverLevel.players()){
                 tickPlayer(player);

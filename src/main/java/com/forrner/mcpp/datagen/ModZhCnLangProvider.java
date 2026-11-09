@@ -77,6 +77,7 @@ public class ModZhCnLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.TIN_BLOCK,"锡块");
         translationBuilder.add(ModBlocks.TIN_STAIRS,"锡楼梯");
         translationBuilder.add(ModBlocks.TIN_SLAB,"锡台阶");
+        translationBuilder.add(ModBlocks.REED,"芦苇");
         translationBuilder.add(ModBlocks.HOT_OBSIDIAN,"炽热的黑曜石");
         translationBuilder.add(ModBlocks.BLAZEFLOWER,"烈焰花");
         translationBuilder.add(ModBlocks.BLAZE_TORCH,"烈焰火把");

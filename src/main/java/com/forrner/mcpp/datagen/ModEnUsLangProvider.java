@@ -77,6 +77,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.TIN_BLOCK,"Tin Block");
         translationBuilder.add(ModBlocks.TIN_STAIRS,"Tin Stairs");
         translationBuilder.add(ModBlocks.TIN_SLAB,"Tin Slab");
+        translationBuilder.add(ModBlocks.REED,"Reed");
         translationBuilder.add(ModBlocks.HOT_OBSIDIAN,"Hot Obsidian");
         translationBuilder.add(ModBlocks.BLAZEFLOWER,"Blazeflower");
         translationBuilder.add(ModBlocks.BLAZE_TORCH,"Blaze Torch");

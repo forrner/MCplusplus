@@ -26,6 +26,7 @@ import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
 import net.minecraft.world.level.storage.loot.providers.number.floats.ResolvableFloat;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 
 import java.util.function.BiFunction;
@@ -41,6 +42,9 @@ public class ModItems {
     public static final Item TIN_BLOCK = registerBlock(ModBlockItemIds.TIN_BLOCK,ModBlocks.TIN_BLOCK);
     public static final Item TIN_STAIRS = registerBlock(ModBlockItemIds.TIN_STAIRS,ModBlocks.TIN_STAIRS);
     public static final Item TIN_SLAB = registerBlock(ModBlockItemIds.TIN_SLAB,ModBlocks.TIN_SLAB);
+    public static final Item REED = registerBlock(ModBlockItemIds.REED, ModBlocks.REED,DoubleHighBlockItem::new,new Item.Properties().compostable(ContextIntProviders.COMPOSTABLE_LOW_MEDIUM).component(DataComponents.COOKING_FUEL,
+            new CookingFuel(new ResolvableInt.Constant(300), ResolvableFloat.fromKey(ContextFloatProviders.COOKING_DEFAULT_SPEED_MULTIPLIER)))
+    );
     public static final Item HOT_OBSIDIAN = registerBlock(ModBlockItemIds.HOT_OBSIDIAN,ModBlocks.HOT_OBSIDIAN);
     public static final Item BLAZEFLOWER = registerBlock(ModBlockItemIds.BLAZEFLOWER,ModBlocks.BLAZEFLOWER);
     public static final Item BLAZE_TORCH = registerBlock(
@@ -60,8 +64,8 @@ public class ModItems {
     public static final Item COAL_TAR = registerItem(ModItemIds.COAL_TAR,new Item.Properties().component(DataComponents.COOKING_FUEL,
             new CookingFuel(new ResolvableInt.Constant(18000), ResolvableFloat.fromKey(ContextFloatProviders.COOKING_DEFAULT_SPEED_MULTIPLIER)))
     );
-    public static final Item STRAWBERRY_SEEDS = registerItem(ModBlockItemIds.STRAWBERRY_CROP, createBlockItemWithCustomItemName(ModBlocks.STRAWBERRY_CROP));
-    public static final Item STRAWBERRY = registerItem(ModItemIds.STRAWBERRY, new Item.Properties().food(ModFoods.STRAWBERRY));
+    public static final Item STRAWBERRY_SEEDS = registerItem(ModBlockItemIds.STRAWBERRY_CROP, createBlockItemWithCustomItemName(ModBlocks.STRAWBERRY_CROP),new Item.Properties().compostable(ContextIntProviders.COMPOSTABLE_LOW));
+    public static final Item STRAWBERRY = registerItem(ModItemIds.STRAWBERRY, new Item.Properties().food(ModFoods.STRAWBERRY).compostable(ContextIntProviders.COMPOSTABLE_LOW_MEDIUM));
     public static final Item GOLDEN_STRAWBERRY = registerItem(ModItemIds.GOLDEN_STRAWBERRY, new Item.Properties().food(ModFoods.GOLDEN_STRAWBERRY, ModConsumables.GOLDEN_STRAWBERRY));
     public static final Item BLAZEFLOWER_SEEDS = registerItem(ModBlockItemIds.BLAZEFLOWER_CROP, createBlockItemWithCustomItemName(ModBlocks.BLAZEFLOWER_CROP));
     public static final Item LEAD_SWORD = registerItem(ModItemIds.LEAD_SWORD, new Item.Properties().sword(ModToolMaterial.LEAD, 3.0F, -2.4F));
@@ -77,7 +81,6 @@ public class ModItems {
     public static final Item LEAD_CHESTPLATE = registerItem(ModItemIds.LEAD_CHESTPLATE, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.CHESTPLATE));
     public static final Item LEAD_LEGGINGS = registerItem(ModItemIds.LEAD_LEGGINGS, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.LEGGINGS));
     public static final Item LEAD_BOOTS = registerItem(ModItemIds.LEAD_BOOTS, new Item.Properties().humanoidArmor(ModArmorMaterials.LEAD, ArmorType.BOOTS));
-
     public static final Item BLAZE_SHARD = registerItem(ModItemIds.BLAZE_SHARD);
     public static final Item BLAZE_CORE = registerItem(ModItemIds.BLAZE_CORE);
     public static final Item INACTIVE_BLAZE_INGOT = registerItem(ModItemIds.INACTIVE_BLAZE_INGOT);
@@ -130,7 +133,6 @@ public class ModItems {
                     .repairable(Items.PHANTOM_MEMBRANE)
                     .fireResistant()
     );
-
     public static final Item UMBRA_ELYTRA = registerItem(
             ModItemIds.UMBRA_ELYTRA,
             new Item.Properties()
@@ -215,7 +217,6 @@ public class ModItems {
     }
 
     public static void register(){
-
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register(FabricCreativeModeTabOutput->{
                     FabricCreativeModeTabOutput.accept(DIAMOND_NUGGET);
@@ -242,6 +243,7 @@ public class ModItems {
                     FabricCreativeModeTabOutput.accept(DEEPSLATE_TIN_ORE);
                     FabricCreativeModeTabOutput.accept(LEAD_ORE);
                     FabricCreativeModeTabOutput.accept(DEEPSLATE_LEAD_ORE);
+                    FabricCreativeModeTabOutput.accept(REED);
                     FabricCreativeModeTabOutput.accept(HOT_OBSIDIAN);
                     FabricCreativeModeTabOutput.accept(STRAWBERRY_SEEDS);
                     FabricCreativeModeTabOutput.accept(BLAZEFLOWER_SEEDS);

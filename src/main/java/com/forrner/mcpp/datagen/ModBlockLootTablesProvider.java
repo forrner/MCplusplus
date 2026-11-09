@@ -1,8 +1,10 @@
 package com.forrner.mcpp.datagen;
 
 import com.forrner.mcpp.block.ModBlocks;
+import com.forrner.mcpp.block.custom.ReedBlock;
 import com.forrner.mcpp.block.custom.StrawberryCrop;
 import com.forrner.mcpp.item.ModItems;
+import com.forrner.mcpp.util.TripleBlockPart;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
@@ -40,6 +42,8 @@ public class ModBlockLootTablesProvider extends FabricBlockLootSubProvider {
         add(ModBlocks.DEEPSLATE_TIN_ORE,createCopperOreLikeDrops(ModBlocks.DEEPSLATE_TIN_ORE, ModItems.RAW_TIN,2,5));
         add(ModBlocks.LEAD_ORE,createOreDrop(ModBlocks.LEAD_ORE,ModItems.RAW_LEAD));
         add(ModBlocks.DEEPSLATE_LEAD_ORE,createOreDrop(ModBlocks.DEEPSLATE_LEAD_ORE,ModItems.RAW_LEAD));
+
+        add(ModBlocks.REED, block -> createSinglePropConditionTable(block, ReedBlock.PART, TripleBlockPart.LOWER));
 
         LootItemCondition.Builder isStrawberryMaxAge = MatchBlock.blockMatches(this.blocks,ModBlocks.STRAWBERRY_CROP,StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCrop.AGE, 5));
         add(ModBlocks.STRAWBERRY_CROP, createStrawberryCropDrops(ModBlocks.STRAWBERRY_CROP, ModItems.STRAWBERRY, ModItems.STRAWBERRY_SEEDS, isStrawberryMaxAge));
