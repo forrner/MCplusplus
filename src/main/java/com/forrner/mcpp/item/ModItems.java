@@ -226,7 +226,8 @@ public class ModItems {
     public static void register(){
 
         FuelValueEvents.BUILD.register((builder, context) -> {
-            builder.add(ModItems.COAL_TAR, 18000);
+            builder.add(ModItems.COAL_TAR, 18000)
+                    .add(ModItems.REED,300);
         });
 
         CompostableRegistry.INSTANCE.add(ModItems.STRAWBERRY_SEEDS, 0.3F);

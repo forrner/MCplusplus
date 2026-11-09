@@ -42,7 +42,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 oreBlasting(TIN_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TIN_INGOT, 0.7F,100,"tin_ingot");
                 oreSmelting(LEAD_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.LEAD_INGOT, 0.8F,200,"lead_ingot");
                 oreBlasting(LEAD_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.LEAD_INGOT, 0.8F,100,"lead_ingot");
-                oreBlasting(COAL_TAR_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.COAL_TAR, 1.0F,400,"coal_tar");
+                oreBlasting(COAL_TAR_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.COAL_TAR, 1.0F,800,"coal_tar");
                 oreBlasting(INACTIVE_BLAZE_INGOT_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.INACTIVE_BLAZE_INGOT, 3.0F,300,"inactive_blaze_ingot");
 
                 stairBuilder(ModBlocks.TIN_STAIRS, Ingredient.of(ModBlocks.TIN_BLOCK))

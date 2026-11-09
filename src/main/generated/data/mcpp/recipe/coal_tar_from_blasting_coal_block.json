@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "category": "misc",
-  "cookingtime": 400,
+  "cookingtime": 800,
   "experience": 1.0,
   "group": "coal_tar",
   "ingredient": "minecraft:coal_block",
