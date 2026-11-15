@@ -9,8 +9,6 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModOreGeneration {
     public static void generateOres() {
-        MCplusplus.LOGGER.info("Registering ores for "+MCplusplus.MOD_ID);
-
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
                 GenerationStep.Decoration.UNDERGROUND_ORES, ModOrePlacements.ORE_TIN);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
