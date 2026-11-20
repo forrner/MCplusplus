@@ -14,7 +14,7 @@ and stays true to the vanilla Minecraft experience.
 
 ## Wiki
 
-For more information,please see the [Wiki]([https://github.com/forrner/MCplusplus/wiki](https://github.com/forrner/MCplusplus/wiki/Introduction(English)))
+For more information,please see the [Wiki](https://github.com/forrner/MCplusplus/wiki/Introduction(English))
 
 ## License
 
